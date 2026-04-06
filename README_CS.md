@@ -37,3 +37,7 @@ Soubor `omnitts_config.txt` umožňuje doladit kvalitu a výkon generování zvu
 * **`audio_chunk_threshold` & `audio_chunk_duration`**: Zabraňuje ustřižení dlouhých vět tím, že rozdělí rozsáhlé textové řetězce do kratších, snáze zpracovatelných zvukových bloků.
 * **`model_path`**: Definuje repozitář na HuggingFace nebo lokální cestu k modelu OmniVoice.
 * **`enable_memory_cache` & `enable_disk_cache`**: Ukládá parametry naklonovaného hlasu do vyrovnávací paměti, což radikálně zrychluje proces při opakovaném rozhovoru se stejným NPC.
+
+## Poděkování (Credits)
+* **OmniVoice**: Tento projekt využívá pokročilý model OmniVoice TTS dostupný na [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice).
+* **Chatterbox**: Implementace a struktura API do značné míry vychází z pluginu [langfod/chatterbox](https://github.com/langfod/chatterbox).

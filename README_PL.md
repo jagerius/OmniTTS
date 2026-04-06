@@ -37,3 +37,7 @@ Plik konfiguracyjny `omnitts_config.txt` pozwala na dopracowanie jakości i wyda
 * **`audio_chunk_threshold` & `audio_chunk_duration`**: Zapobiega ucinaniu długich wypowiedzi przez dzielenie rozbudowanych zdań na mniejsze, odtwarzalne kawałki.
 * **`model_path`**: Ścieżka lokalna lub nazwa repozytorium HuggingFace skąd pobierany jest model OmniVoice.
 * **`enable_memory_cache` & `enable_disk_cache`**: Cechy te przyspieszają kolejne odpowiedzi tego samego NPC poprzez cachowanie ustawień jego tonu głosu.
+
+## Podziękowania (Credits)
+* **OmniVoice**: Projekt ten korzysta z zaawansowanego modelu OmniVoice TTS dostępnego na [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice).
+* **Chatterbox**: Implementacja i struktura API opiera się w głównej mierze na wtyczce [langfod/chatterbox](https://github.com/langfod/chatterbox).

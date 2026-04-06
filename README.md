@@ -37,3 +37,7 @@ The `omnitts_config.txt` file allows you to fine-tune generation metrics and per
 * **`audio_chunk_threshold` & `audio_chunk_duration`**: Prevents the TTS from cutting off during long sentences by breaking down extensive dialogue strings into smaller, digestible audio chunks.
 * **`model_path`**: Specifies the HuggingFace repository or local path for the OmniVoice model.
 * **`enable_memory_cache` & `enable_disk_cache`**: Caches voice clone prompts to massively drastically speed up inference when conversing with the same NPC repeatedly.
+
+## Credits
+* **OmniVoice**: This project utilizes the cutting-edge OmniVoice TTS model available at [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice).
+* **Chatterbox**: The integration and API structure are heavily based on the [langfod/chatterbox](https://github.com/langfod/chatterbox) plugin.

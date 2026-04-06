@@ -37,3 +37,7 @@ Die Datei `omnitts_config.txt` ermöglicht tiefgreifende Optimierungen:
 * **`audio_chunk_threshold` & `audio_chunk_duration`**: Verhindert abgehackte Sätze bei langen Texten, indem sehr lange Passagen in passendere Audio-Chunks unterteilt werden.
 * **`model_path`**: Lokal- oder HuggingFace-Pfad zum OmniVoice Model.
 * **`enable_memory_cache` & `enable_disk_cache`**: Caching von Stimmen. Beschleunigt das Generieren enorm, falls man mehrmals hintereinander mit demselben Charakter spricht.
+
+## Danksagungen (Credits)
+* **OmniVoice**: Dieses Projekt verwendet das fortschrittliche OmniVoice TTS-Modell, verfügbar unter [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice).
+* **Chatterbox**: Die Implementierung und die API-Struktur basieren stark auf dem [langfod/chatterbox](https://github.com/langfod/chatterbox) Plugin.

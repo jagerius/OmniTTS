@@ -37,3 +37,7 @@ OmniTTS 是一款高性能文本转语音 (TTS) 模块，用来替换 SkyrimNet 
 * **`audio_chunk_threshold` & `audio_chunk_duration`**: 通过将大段长的对话串分解转化为多个较小的可消化音频片段，防止超长句子生成因为显存爆炸而中断切分。
 * **`model_path`**: 定义从 HuggingFace 还是本地绝对路径加载 OmniVoice 大模型。
 * **`enable_memory_cache` & `enable_disk_cache`**: 对同一 NPC 多次交谈时，利用缓存克隆语音属性以极大地提高了音频生成响应的时间。
+
+## 致谢 (Credits)
+* **OmniVoice**: 本项目使用了位于 [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice) 的先进 OmniVoice TTS 模型。
+* **Chatterbox**: 本项目的 API 结构与实现极大程度上基于 [langfod/chatterbox](https://github.com/langfod/chatterbox) 插件。

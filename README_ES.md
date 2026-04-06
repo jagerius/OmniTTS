@@ -37,3 +37,7 @@ El panel de ajustes reside primordialmente en el archivo de texto `omnitts_confi
 * **`audio_chunk_threshold` & `audio_chunk_duration`**: Dos herramientas excelentes si la Inteligencia se bloquea generando guiones largos, forzándola a retransmitir y trocear las cuñas cortas sucesivamente.
 * **`model_path`**: Referencia de donde se descarga/localiza el modelo pesado OmniVoice base.
 * **`enable_memory_cache` & `enable_disk_cache`**: La activación previene la espera innecesaria entre carga de variables si interactúas múltiples veces con un mismo aldeano.
+
+## Créditos
+* **OmniVoice**: Este proyecto utiliza el modelo avanzado OmniVoice TTS disponible en [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice).
+* **Chatterbox**: La implementación y la estructura de la API se basan en gran medida en el plugin [langfod/chatterbox](https://github.com/langfod/chatterbox).
