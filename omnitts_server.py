@@ -468,7 +468,7 @@ if __name__ == "__main__":
 
     demo.queue(
         max_size=50,
-        default_concurrency_limit=4,  # Zwiększono z 1 do 4 do obsługi żądań asynchronicznie
+        default_concurrency_limit=2,  # Zmniejszono z 4 do 2, by zapobiec opóźnieniom i timeoutom klienta
     ).launch(
         server_name=args.server,
         server_port=args.port,
