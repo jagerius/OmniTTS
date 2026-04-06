@@ -22,6 +22,7 @@ DEFAULTS = {
     "model_path": "k2-fsa/OmniVoice",
     "enable_memory_cache": True,
     "enable_disk_cache": True,
+    "use_cpu": False,
 }
 
 _config_cache: dict | None = None
@@ -125,5 +126,6 @@ def get_tts_params(payload_params: dict | None = None) -> dict:
     result["postprocess_output"] = bool(result["postprocess_output"])
     result["audio_chunk_threshold"] = float(result["audio_chunk_threshold"])
     result["audio_chunk_duration"] = float(result["audio_chunk_duration"])
+    result["use_cpu"] = bool(result["use_cpu"])
 
     return result

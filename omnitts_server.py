@@ -43,18 +43,24 @@ from audio_cache import (
 # ---------------------------------------------------------------------------
 START_DIRECTORY = Path.cwd()
 
+_initial_config = load_config()
+_use_cpu_override = _initial_config.get("use_cpu", "false").lower() == "true"
+
 # Force CUDA if available
-if torch.cuda.is_available():
+if torch.cuda.is_available() and not _use_cpu_override:
     DEVICE = "cuda:0"
     DTYPE = torch.bfloat16
     logger.info(f"CUDA available: {torch.cuda.get_device_name(0)} (VRAM: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB)")
 else:
     DEVICE = "cpu"
     DTYPE = torch.float32
-    logger.warning("CUDA NOT available! Running on CPU. Check your PyTorch installation:")
-    logger.warning(f"  torch version: {torch.__version__}")
-    logger.warning(f"  torch.cuda.is_available(): {torch.cuda.is_available()}")
-    logger.warning("  Install CUDA PyTorch: pip install torch --extra-index-url https://download.pytorch.org/whl/cu128")
+    if _use_cpu_override:
+        logger.info("Running on CPU as requested by use_cpu=true in config.")
+    else:
+        logger.warning("CUDA NOT available! Running on CPU. Check your PyTorch installation:")
+        logger.warning(f"  torch version: {torch.__version__}")
+        logger.warning(f"  torch.cuda.is_available(): {torch.cuda.is_available()}")
+        logger.warning("  Install CUDA PyTorch: pip install torch --extra-index-url https://download.pytorch.org/whl/cu128")
 
 MODEL: OmniVoice = None
 IGNORE_PING = None

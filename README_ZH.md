@@ -20,6 +20,9 @@ OmniTTS 是一款高性能文本转语音 (TTS) 模块，用来替换 SkyrimNet 
 2. 运行 `setup_venv.bat` 脚本（Windows系统）。该脚本将自动创建 Python 虚拟环境，并安装包括支持 CUDA 的 PyTorch 等所有必需依赖库。
 3. 请确保将目标 NPC 的语音参考样本 `.wav` 文件放置在 `speakers/` 目录中。
 
+> [!NOTE]
+> 默认情况下，OmniTTS 需要 NVIDIA 显卡才能运行（它使用 CUDA 加速）。如果您没有兼容的 GPU，您可以通过在 `omnitts_config.txt` 文件中设置 `use_cpu = true` 来强制在处理器 (CPU) 上运行（注意：生成速度将明显变慢）。
+
 ## 使用方法 (Usage)
 1. 想启动此 TTS 服务器时，请双击运行 `Start.bat`。此操作将在本地 8000 端口启动 Gradio 服务器。
 2. 本地服务器将全自动监听来自 SkyrimNet GamePlugin 插件发送出的 API 请求。

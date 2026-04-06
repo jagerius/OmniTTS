@@ -20,6 +20,9 @@ OmniTTS es un módulo avanzado de conversión de texto a voz (TTS) diseñado par
 2. Ejecuta el archivo `setup_venv.bat` (Windows). Este script se encargará de crear un entorno de Python específico y de instalar dependencias clave como PyTorch (con aceleración CUDA).
 3. Cerciórate de tener audios de muestra en formato `.wav` correspondientes a la voz de cada NPC almacenados en la carpeta `speakers/`.
 
+> [!NOTE]
+> Por defecto, OmniTTS requiere una tarjeta gráfica NVIDIA para funcionar (utiliza aceleración CUDA). Si no tienes una GPU compatible, puedes forzar su ejecución en el procesador (CPU) configurando `use_cpu = true` en el archivo `omnitts_config.txt` (nota: la generación será significativamente más lenta).
+
 ## Uso
 1. Abre `Start.bat` para levantar el servidor TTS en el puerto local 8000.
 2. Mantén esta ventana abierta. Este servidor procesa todas las solicitudes API que manda el plugin (GamePlugin) de SkyrimNet internamente.

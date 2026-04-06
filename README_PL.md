@@ -20,6 +20,9 @@ OmniTTS to wysokowydajny moduł zamiany tekstu na mowę (TTS), który zastępuje
 2. Uruchom plik `setup_venv.bat` (Windows). Skrypt ten automatycznie utworzy środowisko wirtualne Pythona i zainstaluje wszystkie wymagane biblioteki (w tym PyTorch z obsługą CUDA dla kart NVIDIA).
 3. Upewnij się, że umieściłeś odpowiednie pliki `.wav` z próbkami głosów postaci w folderze `speakers/`.
 
+> [!NOTE]
+> Domyślnie OmniTTS wymaga do działania karty graficznej NVIDIA (wykorzystuje rdzenie CUDA). Jeżeli nie posiadasz kompatybilnej karty, możesz wymusić działanie na procesorze (CPU), zmieniając opcję `use_cpu = true` w pliku `omnitts_config.txt` (uwaga: generowanie głosu będzie znacznie wolniejsze).
+
 ## Używanie
 1. Aby uruchomić serwer TTS, uruchom `Start.bat`. Zainicjuje to lokalny serwer Gradio nasłuchujący na porcie 8000.
 2. Serwer ten będzie czekał na żądania API od wtyczki SkyrimNet (GamePlugin).

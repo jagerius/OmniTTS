@@ -57,3 +57,7 @@ model_path = k2-fsa/OmniVoice
 # VoiceClonePrompt caching speeds up repeated use of same speaker
 enable_memory_cache = true
 enable_disk_cache = true
+
+# USE_CPU: Force generation on CPU instead of NVIDIA GPU
+# true = force CPU (slow!), false = use CUDA if available
+use_cpu = false

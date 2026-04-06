@@ -20,6 +20,9 @@ OmniTTS ist ein leistungsstarkes Text-to-Speech (TTS) Modul, welches die Standar
 2. Führen Sie `setup_venv.bat` (Windows) aus. Dieses Skript erstellt automatisch eine virtuelle Python-Umgebung und installiert alle notwendigen Abhängigkeiten, einschließlich PyTorch mit CUDA-Unterstützung.
 3. Stellen Sie sicher, dass sich Stimmproben für die NPCs als `.wav` im Verzeichnis `speakers/` befinden.
 
+> [!NOTE]
+> Standardmäßig benötigt OmniTTS eine NVIDIA-Grafikkarte (es verwendet CUDA-Beschleunigung). Wenn Sie keine kompatible GPU haben, können Sie die Ausführung auf dem Prozessor (CPU) erzwingen, indem Sie `use_cpu = true` in der Datei `omnitts_config.txt` setzen (Hinweis: Die Generierung wird deutlich langsamer sein).
+
 ## Nutzung
 1. Starten Sie `Start.bat`, um den TTS-Server zu aktivieren. Danach wartet ein lokaler Gradio-Server am Port 8000 auf Befehle.
 2. Der Server lauscht auf API-Anfragen des SkyrimNet GamePlugins.
