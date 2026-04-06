@@ -23,3 +23,6 @@ loguru
 # HuggingFace model download
 huggingface_hub
 hf-xet
+
+# OmniVoice
+omnivoice

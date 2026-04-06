@@ -31,13 +31,6 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo [4/4] Installing OmniVoice (editable)...
-pip install -e ..\OmniVoice
-if %errorlevel% neq 0 (
-    echo WARNING: Failed to install OmniVoice in editable mode.
-    echo The server will try to import OmniVoice from the parent directory.
-)
-
 echo.
 echo ============================================================
 echo   Setup complete!
