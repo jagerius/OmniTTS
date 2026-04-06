@@ -1,0 +1,59 @@
+# OmniTTS Configuration for SkyrimNet
+# ====================================
+#
+# Controls how OmniVoice generates speech.
+# "default" = use built-in OmniVoice default value
+# "api"     = use value from SkyrimNet UI slider
+# <number>  = use that specific value
+#
+# When SkyrimNet sends parameters via the Chatterbox API,
+# the following mapping is used:
+#   cfg_scale  (SkyrimNet) → guidance_scale (OmniVoice)
+#   speaking_rate (SkyrimNet) → speed (OmniVoice)
+#
+# Parameters like temperature, top_p, min_p, exaggeration from
+# the Chatterbox API are IGNORED because OmniVoice is a diffusion
+# model (not autoregressive) and does not use them.
+
+# GUIDANCE_SCALE: Classifier-free guidance scale
+# Controls adherence to the reference voice and text
+# Range: 0.0 - 4.0, Default: 2.0
+# Maps from: "cfg_scale" slider in SkyrimNet UI when set to "api"
+guidance_scale = 2.5
+
+# NUM_STEP: Number of diffusion inference steps
+# Lower = faster generation, Higher = better quality
+# Range: 4 - 64, Default: 32 (use 16 for faster inference)
+num_step = 12
+
+# SPEED: Speaking speed factor
+# > 1.0 = faster speech, < 1.0 = slower speech
+# Range: 0.7 - 1.3, Default: 1.0
+speed = 1.3
+
+# DENOISE: Enable denoising token for cleaner output
+# true = cleaner speech (recommended), false = slightly faster
+denoise = true
+
+# POSTPROCESS_OUTPUT: Remove long silences from generated audio
+# true = cleaner output (recommended)
+postprocess_output = true
+
+# AUDIO_CHUNK_THRESHOLD: Split very long messages
+# Jeśli wygenerowane audio ma zająć więcej sekund niż ta wartość, 
+# model uaktywni system kawałkowania by uniknąć obcięcia wypowiedzi.
+# Zmniejszyłem z domyślnych 30.0 na 10.0 by uniknąć ucinania końcówek po polsku.
+audio_chunk_threshold = 10.0
+
+# AUDIO_CHUNK_DURATION: Length of each spoken chunk in seconds
+# Dla długiego tekstu model wygeneruje audio w blokach, by zapobiec zatykaniu LLM.
+audio_chunk_duration = 10.0
+
+# MODEL_PATH: HuggingFace model repo or local path
+# Default: k2-fsa/OmniVoice (auto-downloads on first run)
+model_path = k2-fsa/OmniVoice
+
+# Cache settings
+# VoiceClonePrompt caching speeds up repeated use of same speaker
+enable_memory_cache = true
+enable_disk_cache = true

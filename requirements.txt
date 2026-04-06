@@ -1,0 +1,25 @@
+# OmniTTS Requirements
+# PyTorch with CUDA 12.8 support
+--extra-index-url=https://download.pytorch.org/whl/cu128
+torch>=2.8.0,<2.10
+torchaudio>=2.8.0,<2.10
+
+# Transformers (OmniVoice requires 5.3.0+)
+transformers>=5.3.0
+accelerate
+
+# Audio
+soundfile
+pydub
+numpy
+scipy
+
+# Gradio (must match SkyrimNet DLL expectations - v5.x)
+gradio>=5.0
+
+# Logging
+loguru
+
+# HuggingFace model download
+huggingface_hub
+hf-xet
