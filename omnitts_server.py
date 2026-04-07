@@ -10,6 +10,7 @@ Usage:
 """
 
 import os
+import gc
 import sys
 from argparse import ArgumentParser
 from pathlib import Path
@@ -203,29 +204,37 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
 
     speed_val = float(params["speed"])
     try:
-        audios = MODEL.generate(
-            text=text,
-            language=lang,
-            voice_clone_prompt=voice_prompt,
-            speed=speed_val if speed_val != 1.0 else None,
-            generation_config=gen_config,
-        )
+        with torch.inference_mode():
+            audios = MODEL.generate(
+                text=text,
+                language=lang,
+                voice_clone_prompt=voice_prompt,
+                speed=speed_val if speed_val != 1.0 else None,
+                generation_config=gen_config,
+            )
 
-        # Save first audio result
-        audio_tensor = audios[0]
-        wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
+            # Save first audio result
+            audio_tensor = audios[0]
+            wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
 
-        # Log timing
-        elapsed_s = (perf_counter_ns() - func_start) / 1_000_000_000
-        audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
-        logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
-                    f"in {elapsed_s:.2f}s. Speed: {audio_len_s/elapsed_s:.2f}x")
+            # Log timing
+            elapsed_s = (perf_counter_ns() - func_start) / 1_000_000_000
+            audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
+            logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
+                        f"in {elapsed_s:.2f}s. Speed: {audio_len_s/elapsed_s:.2f}x")
 
-        del audios
-        return str(wav_path)
+            del audios
+            del audio_tensor
+            
+            return str(wav_path)
     except Exception as e:
         logger.exception(f"CRITICAL ERROR during MODEL.generate or save_wav: {e}")
         raise
+    finally:
+        # VRAM Leak Fix: Force garbage collection and CUDA cache clearing
+        gc.collect()
+        if DEVICE.startswith("cuda") and torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
 
 # ---------------------------------------------------------------------------

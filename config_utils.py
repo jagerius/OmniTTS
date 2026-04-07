@@ -21,6 +21,7 @@ DEFAULTS = {
     "audio_chunk_duration": 10.0,
     "model_path": "k2-fsa/OmniVoice",
     "enable_memory_cache": True,
+    "max_memory_prompts": 10,
     "enable_disk_cache": True,
     "use_cpu": False,
 }
@@ -127,5 +128,6 @@ def get_tts_params(payload_params: dict | None = None) -> dict:
     result["audio_chunk_threshold"] = float(result["audio_chunk_threshold"])
     result["audio_chunk_duration"] = float(result["audio_chunk_duration"])
     result["use_cpu"] = bool(result["use_cpu"])
+    result["max_memory_prompts"] = int(result["max_memory_prompts"])
 
     return result
