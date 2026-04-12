@@ -19,6 +19,10 @@ OmniTTS to wysokowydajny moduł zamiany tekstu na mowę (TTS), który zastępuje
 1. Przejdź do folderu `OmniTTS` w głównym katalogu moda.
 2. Uruchom plik `setup_venv.bat` (Windows). Skrypt ten automatycznie utworzy środowisko wirtualne Pythona i zainstaluje wszystkie wymagane biblioteki (w tym PyTorch z obsługą CUDA dla kart NVIDIA).
 3. Upewnij się, że umieściłeś odpowiednie pliki `.wav` z próbkami głosów postaci w folderze `speakers/`.
+4. **Ważne dla użytkowników Windows**: OmniVoice wymaga biblioteki `torchcodec`, dla której niezbędna jest pełna wersja zestawu narzędzi FFmpeg.
+   - Pobierz pełną wersję (FULL) z [BtBN FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases).
+   - Wypakuj archiwum i zmień nazwę wypakowanego folderu na `ffmpeg`.
+   - Umieść ten folder w głównym katalogu (`SkyrimNetOmniVoice`) lub bezpośrednio w `OmniTTS` (tak aby powstała ścieżka `ffmpeg/bin`). Serwer automatycznie go wykryje, co zapobiegnie błędom.
 
 > [!NOTE]
 > Domyślnie OmniTTS wymaga do działania karty graficznej NVIDIA (wykorzystuje rdzenie CUDA). Jeżeli nie posiadasz kompatybilnej karty, możesz wymusić działanie na procesorze (CPU), zmieniając opcję `use_cpu = true` w pliku `omnitts_config.txt` (uwaga: generowanie głosu będzie znacznie wolniejsze).

@@ -13,6 +13,8 @@ import os
 import gc
 import sys
 import re
+import warnings
+import logging
 from argparse import ArgumentParser
 from pathlib import Path
 from time import perf_counter_ns
@@ -20,6 +22,39 @@ from time import perf_counter_ns
 import gradio as gr
 import torch
 from loguru import logger
+
+# Suppress noisy Transformers/Whisper warnings
+warnings.filterwarnings("ignore", message=".*forced_decoder_ids.*")
+warnings.filterwarnings("ignore", message=".*multilingual Whisper will default to language detection.*")
+warnings.filterwarnings("ignore", message=".*A custom logits processor of type.*")
+
+class TransformersWarningFilter(logging.Filter):
+    def filter(self, record):
+        msg = record.getMessage()
+        if "forced_decoder_ids" in msg: return False
+        if "multilingual Whisper will default" in msg: return False
+        if "A custom logits processor of type" in msg: return False
+        return True
+
+logging.getLogger("transformers").addFilter(TransformersWarningFilter())
+
+# ---------------------------------------------------------------------------
+# Add FFmpeg to DLL directory (for torchcodec on Windows)
+# ---------------------------------------------------------------------------
+if os.name == 'nt':
+    # Try finding FFmpeg in common local paths
+    _possible_ffmpeg_paths = [
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "ffmpeg", "bin"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "ffmpeg", "bin"),
+    ]
+    for _path in _possible_ffmpeg_paths:
+        if os.path.exists(_path):
+            try:
+                os.add_dll_directory(_path)
+                logger.info(f"Added FFmpeg DLL directory: {_path}")
+                break
+            except Exception as e:
+                logger.warning(f"Failed to add FFmpeg DLL directory {_path}: {e}")
 
 # ---------------------------------------------------------------------------
 # Add OmniVoice to Python path
