@@ -24,12 +24,12 @@ guidance_scale = 2.5
 # NUM_STEP: Number of diffusion inference steps
 # Lower = faster generation, Higher = better quality
 # Range: 4 - 64, Default: 32 (use 16 for faster inference)
-num_step = 12
+num_step = 16
 
 # SPEED: Speaking speed factor
 # > 1.0 = faster speech, < 1.0 = slower speech
 # Range: 0.7 - 1.3, Default: 1.0
-speed = 1.3
+speed = 1.0
 
 # DENOISE: Enable denoising token for cleaner output
 # true = cleaner speech (recommended), false = slightly faster
@@ -43,11 +43,11 @@ postprocess_output = true
 # Jeśli wygenerowane audio ma zająć więcej sekund niż ta wartość, 
 # model uaktywni system kawałkowania by uniknąć obcięcia wypowiedzi.
 # Zmniejszyłem z domyślnych 30.0 na 10.0 by uniknąć ucinania końcówek po polsku.
-audio_chunk_threshold = 10.0
+audio_chunk_threshold = 15.0
 
 # AUDIO_CHUNK_DURATION: Length of each spoken chunk in seconds
 # Dla długiego tekstu model wygeneruje audio w blokach, by zapobiec zatykaniu LLM.
-audio_chunk_duration = 10.0
+audio_chunk_duration = 15.0
 
 # MODEL_PATH: HuggingFace model repo or local path
 # Default: k2-fsa/OmniVoice (auto-downloads on first run)
@@ -61,3 +61,31 @@ enable_disk_cache = true
 # USE_CPU: Force generation on CPU instead of NVIDIA GPU
 # true = force CPU (slow!), false = use CUDA if available
 use_cpu = false
+
+# ====================================
+# PERFORMANCE & MEMORY SETTINGS
+# ====================================
+
+# ENABLE_TF32: Use TensorFloat-32 for faster matrix multiplications on Ampere GPUs (RTX 30xx+)
+# true = faster, false = standard float32 (default false for broader compatibility)
+enable_tf32 = true
+
+# ENABLE_TORCH_COMPILE: Use PyTorch JIT compiler to accelerate generation via static graphs
+# true = faster after initial warmup, false = default eager execution
+enable_torch_compile = false
+
+# ATTENTION_BACKEND: Select attention mechanism. 
+# sdpa = PyTorch native Scaled Dot-Product Attention (FlashAttention compatible)
+# sage = SageAttention (requires sageattention package)
+# default = no forced backend
+attention_backend = sdpa
+
+# VRAM_CLEANUP_THRESHOLD_GB: Run aggressive VRAM cache clearing only if GPU memory usage exceeds this value (GB)
+# This prevents slowdowns from constant garbage collection.
+# 3.0 = Clear if over 3 GB
+vram_cleanup_threshold_gb = 6.0
+
+# LOAD_ASR_MODEL: Load Whisper into VRAM.
+# Only needed if you plan to provide raw WAV references WITHOUT pre-generated .pt cache files.
+# false = disable Whisper, saves ~1GB VRAM. (Reuqires cached VoiceClonePrompts)
+load_asr_model = false

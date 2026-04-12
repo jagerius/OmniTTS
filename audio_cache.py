@@ -15,13 +15,11 @@ from time import time
 import soundfile as sf
 import torch
 from loguru import logger
-from collections import OrderedDict
-from config_utils import load_config
 
 START_DIRECTORY = Path.cwd()
 
-# In-memory VoiceClonePrompt cache (LRU)
-_memory_cache: OrderedDict = OrderedDict()
+# In-memory VoiceClonePrompt cache
+_memory_cache = {}
 
 
 def get_cache_key(audio_path: str | None) -> str | None:
@@ -43,23 +41,15 @@ def load_prompt_cache(cache_key: str, cache_dir: Path,
     """Load a VoiceClonePrompt from memory or disk cache."""
     if enable_memory and cache_key in _memory_cache:
         logger.debug(f"Cache hit (memory): {cache_key}")
-        _memory_cache.move_to_end(cache_key)
         return _memory_cache[cache_key]
 
     if enable_disk:
         disk_path = cache_dir / f"{cache_key}.pt"
         if disk_path.exists():
             try:
-                prompt = torch.load(disk_path, map_location="cpu", weights_only=False)
+                prompt = torch.load(disk_path, weights_only=False)
                 if enable_memory:
                     _memory_cache[cache_key] = prompt
-                    _memory_cache.move_to_end(cache_key)
-                    
-                    # Enforce LRU limit
-                    config = load_config()
-                    max_prompts = int(config.get("max_memory_prompts", 10))
-                    while len(_memory_cache) > max_prompts:
-                        _memory_cache.popitem(last=False)
 
                 logger.debug(f"Cache hit (disk): {cache_key}")
                 return prompt
@@ -75,12 +65,6 @@ def save_prompt_cache(cache_key: str, prompt, cache_dir: Path,
     """Save a VoiceClonePrompt to memory and/or disk cache."""
     if enable_memory:
         _memory_cache[cache_key] = prompt
-        _memory_cache.move_to_end(cache_key)
-        
-        config = load_config()
-        max_prompts = int(config.get("max_memory_prompts", 10))
-        while len(_memory_cache) > max_prompts:
-            _memory_cache.popitem(last=False)
 
     if enable_disk:
         cache_dir.mkdir(parents=True, exist_ok=True)

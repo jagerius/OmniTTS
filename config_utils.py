@@ -24,6 +24,11 @@ DEFAULTS = {
     "max_memory_prompts": 10,
     "enable_disk_cache": True,
     "use_cpu": False,
+    "enable_tf32": True,
+    "enable_torch_compile": True,
+    "attention_backend": "sdpa",
+    "vram_cleanup_threshold_gb": 3.0,
+    "load_asr_model": False,
 }
 
 _config_cache: dict | None = None
@@ -129,5 +134,10 @@ def get_tts_params(payload_params: dict | None = None) -> dict:
     result["audio_chunk_duration"] = float(result["audio_chunk_duration"])
     result["use_cpu"] = bool(result["use_cpu"])
     result["max_memory_prompts"] = int(result["max_memory_prompts"])
+    result["enable_tf32"] = bool(result["enable_tf32"])
+    result["enable_torch_compile"] = bool(result["enable_torch_compile"])
+    result["attention_backend"] = str(result["attention_backend"]).lower().strip()
+    result["vram_cleanup_threshold_gb"] = float(result["vram_cleanup_threshold_gb"])
+    result["load_asr_model"] = bool(result["load_asr_model"])
 
     return result

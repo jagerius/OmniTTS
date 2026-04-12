@@ -12,6 +12,7 @@ Usage:
 import os
 import gc
 import sys
+import re
 from argparse import ArgumentParser
 from pathlib import Path
 from time import perf_counter_ns
@@ -99,21 +100,59 @@ def resolve_language(lang_code: str | None) -> str | None:
 def load_model():
     """Load the OmniVoice model."""
     global MODEL
-    config = load_config()
-    model_path = config.get("model_path", DEFAULTS["model_path"])
+    from config_utils import get_tts_params
+    params = get_tts_params()
+
+    model_path = params.get("model_path", DEFAULTS["model_path"])
+    load_asr = params.get("load_asr_model", False)
 
     logger.info(f"Loading OmniVoice from: {model_path}")
-    logger.info(f"Device: {DEVICE}, Dtype: {DTYPE}")
+    logger.info(f"Device: {DEVICE}, Dtype: {DTYPE}, Load ASR: {load_asr}")
+
+    if params.get("enable_tf32", True) and torch.cuda.is_available():
+        logger.info("Enabling TF32 optimizations")
+        torch.backends.cudnn.allow_tf32 = True
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.set_float32_matmul_precision('high')
+
+    attn_backend = params.get("attention_backend", "default").lower().strip()
+    if attn_backend == "sage":
+        logger.warning("SageAttention is currently not supported with OmniVoice on Windows. "
+                       "Falling back to PyTorch default SDPA (which already uses FlashAttention when available).")
+        attn_backend = "default"
+    
+    if attn_backend == "sdpa":
+        # PyTorch 2.x uses SDPA (including FlashAttention) by default.
+        # No monkey-patching needed — just log it.
+        logger.info("Attention backend: PyTorch SDPA (FlashAttention enabled by default on compatible GPUs)")
+    else:
+        logger.info(f"Attention backend: {attn_backend} (PyTorch will choose automatically)")
 
     MODEL = OmniVoice.from_pretrained(
         model_path,
         device_map=DEVICE,
         torch_dtype=DTYPE,
-        load_asr=True,  # Auto-transcribe reference audio
-        asr_model_name="openai/whisper-base", # Switch to tiny/base whisper to save ~1.5GB VRAM
+        load_asr=load_asr,
+        asr_model_name="openai/whisper-base" if load_asr else None,
     )
 
-    logger.info(f"Model loaded. Sampling rate: {MODEL.sampling_rate} Hz")
+    if params.get("enable_torch_compile", True):
+        logger.info("Applying torch.compile to MODEL to boost performance (this may take a minute on first run)")
+        try:
+            compiled_something = False
+            if hasattr(MODEL, 'llm'):
+                MODEL.llm = torch.compile(MODEL.llm)
+                compiled_something = True
+            if hasattr(MODEL, 'flow'):
+                MODEL.flow = torch.compile(MODEL.flow)
+                compiled_something = True
+            
+            if not compiled_something:
+                MODEL = torch.compile(MODEL)
+        except Exception as e:
+            logger.warning(f"Failed to apply torch.compile: {e}. Running without compile.")
+
+    logger.info(f"Model loaded. Sampling rate: getattr(MODEL, 'sampling_rate', 24000) Hz")
     
     return MODEL
 
@@ -141,6 +180,10 @@ def get_cached_prompt(audio_path: str | None):
     # Create new voice clone prompt
     logger.info(f"Creating voice clone prompt from: {Path(audio_path).name}")
     try:
+        from config_utils import get_tts_params
+        if not get_tts_params().get("load_asr_model", False):
+            logger.warning(f"load_asr_model=False, but generating prompt for new voice {Path(audio_path).name}! "
+                           "This may crash if OmniVoice tries to load ASR on the fly or requires ref_text.")
         prompt = MODEL.create_voice_clone_prompt(
             ref_audio=audio_path,
             ref_text=None,  # Auto-transcribe with Whisper
@@ -215,13 +258,21 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
 
             # Save first audio result
             audio_tensor = audios[0]
-            wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
+            
+            if audio_tensor.numel() == 0:
+                logger.warning(f"Model generated empty audio for text: '{text}'. Using silence fallback.")
+                wav_path = Path(SILENCE_AUDIO_PATH).absolute()
+                audio_len_s = 0.0
+            else:
+                wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
+                audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
 
             # Log timing
             elapsed_s = (perf_counter_ns() - func_start) / 1_000_000_000
-            audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
+            
+            speed_factor = (audio_len_s / elapsed_s) if elapsed_s > 0 else 0.0
             logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
-                        f"in {elapsed_s:.2f}s. Speed: {audio_len_s/elapsed_s:.2f}x")
+                        f"in {elapsed_s:.2f}s. Speed: {speed_factor:.2f}x")
 
             del audios
             del audio_tensor
@@ -231,10 +282,15 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
         logger.exception(f"CRITICAL ERROR during MODEL.generate or save_wav: {e}")
         raise
     finally:
-        # VRAM Leak Fix: Force garbage collection and CUDA cache clearing
-        gc.collect()
+        # VRAM Leak Fix: Smart garbage collection based on threshold
         if DEVICE.startswith("cuda") and torch.cuda.is_available():
-            torch.cuda.empty_cache()
+            vram_limit_gb = float(params.get("vram_cleanup_threshold_gb", 3.0))
+            reserved_gb = torch.cuda.memory_reserved(DEVICE) / (1024**3)
+            
+            if reserved_gb > vram_limit_gb:
+                logger.info(f"VRAM reserved ({reserved_gb:.2f} GB) exceeded limit ({vram_limit_gb} GB). Clearing cache...")
+                gc.collect()
+                torch.cuda.empty_cache()
 
 
 # ---------------------------------------------------------------------------
@@ -276,6 +332,29 @@ def generate_audio(
     # Handle Gradio audio dict format
     if isinstance(speaker_audio, dict) and "path" in speaker_audio:
         speaker_audio = speaker_audio["path"]
+    elif isinstance(speaker_audio, str) and speaker_audio.strip().startswith("{") and "'path':" in speaker_audio:
+        import ast
+        try:
+            parsed = ast.literal_eval(speaker_audio)
+            if isinstance(parsed, dict) and 'path' in parsed:
+                speaker_audio = parsed['path']
+        except Exception:
+            pass
+            
+    # Clean up any potential garbage chars from string to be safe on Windows
+    if isinstance(speaker_audio, str) and (":" in speaker_audio[2:] or "{" in speaker_audio):
+        logger.warning(f"speaker_audio seems invalid or raw dict string. Clearing it to avoid file system error: {speaker_audio[:50]}")
+        speaker_audio = None
+
+    # --- Sanitize text from Universal Translator ---
+    # Universal Translator czesto wysyla tekst ze znakami nowej linii (\n), 
+    # co powoduje ucinanie generacji przez model teksowy wewnatrz OmniVoice.
+    original_text_len = len(text)
+    text = text.replace('\r', ' ').replace('\n', ' ').replace('|', ' ')
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    if len(text) != original_text_len or "\n" in text:
+        logger.info("Zoptymalizowano tekst wejsciowy (usunieto \\n).")
 
     logger.info(f"inputs: text={text[:60]}, language={language}, "
                 f"speaker_audio={Path(speaker_audio).stem if speaker_audio else 'None'}, "
@@ -362,14 +441,8 @@ with gr.Blocks() as demo:
     # These MUST match the exact Chatterbox signature
     model_choice = gr.Textbox(visible=False)
     language = gr.Textbox(visible=False)
-    speaker_audio = gr.Audio(
-        sources=["upload", "microphone"], type="filepath",
-        label="Reference Audio File", value=None, visible=False,
-    )
-    prefix_audio = gr.Audio(
-        sources=["upload", "microphone"], type="filepath",
-        label="Prefix Audio", value=None, visible=False,
-    )
+    speaker_audio = gr.Textbox(visible=False)
+    prefix_audio = gr.Textbox(visible=False)
     emotion1 = gr.Number(visible=False)
     emotion2 = gr.Number(visible=False)
     emotion3 = gr.Number(visible=False)
