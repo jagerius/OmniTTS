@@ -21,7 +21,6 @@ DEFAULTS = {
     "audio_chunk_duration": 10.0,
     "model_path": "k2-fsa/OmniVoice",
     "enable_memory_cache": True,
-    "max_memory_prompts": 10,
     "enable_disk_cache": True,
     "use_cpu": False,
     "enable_tf32": True,
@@ -133,11 +132,14 @@ def get_tts_params(payload_params: dict | None = None) -> dict:
     result["audio_chunk_threshold"] = float(result["audio_chunk_threshold"])
     result["audio_chunk_duration"] = float(result["audio_chunk_duration"])
     result["use_cpu"] = bool(result["use_cpu"])
+<<<<<<< HEAD
     result["max_memory_prompts"] = int(result["max_memory_prompts"])
     result["enable_tf32"] = bool(result["enable_tf32"])
     result["enable_torch_compile"] = bool(result["enable_torch_compile"])
     result["attention_backend"] = str(result["attention_backend"]).lower().strip()
     result["vram_cleanup_threshold_gb"] = float(result["vram_cleanup_threshold_gb"])
     result["load_asr_model"] = bool(result["load_asr_model"])
+=======
+>>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
 
     return result

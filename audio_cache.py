@@ -19,7 +19,11 @@ from loguru import logger
 START_DIRECTORY = Path.cwd()
 
 # In-memory VoiceClonePrompt cache
+<<<<<<< HEAD
 _memory_cache = {}
+=======
+_memory_cache: dict = {}
+>>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
 
 
 def get_cache_key(audio_path: str | None) -> str | None:
@@ -50,7 +54,10 @@ def load_prompt_cache(cache_key: str, cache_dir: Path,
                 prompt = torch.load(disk_path, weights_only=False)
                 if enable_memory:
                     _memory_cache[cache_key] = prompt
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
                 logger.debug(f"Cache hit (disk): {cache_key}")
                 return prompt
             except Exception as e:

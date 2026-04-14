@@ -10,7 +10,6 @@ Usage:
 """
 
 import os
-import gc
 import sys
 import re
 import warnings
@@ -282,15 +281,15 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
 
     speed_val = float(params["speed"])
     try:
-        with torch.inference_mode():
-            audios = MODEL.generate(
-                text=text,
-                language=lang,
-                voice_clone_prompt=voice_prompt,
-                speed=speed_val if speed_val != 1.0 else None,
-                generation_config=gen_config,
-            )
+        audios = MODEL.generate(
+            text=text,
+            language=lang,
+            voice_clone_prompt=voice_prompt,
+            speed=speed_val if speed_val != 1.0 else None,
+            generation_config=gen_config,
+        )
 
+<<<<<<< HEAD
             # Save first audio result
             audio_tensor = audios[0]
             
@@ -308,14 +307,24 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
             speed_factor = (audio_len_s / elapsed_s) if elapsed_s > 0 else 0.0
             logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
                         f"in {elapsed_s:.2f}s. Speed: {speed_factor:.2f}x")
+=======
+        # Save first audio result
+        audio_tensor = audios[0]
+        wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
 
-            del audios
-            del audio_tensor
-            
-            return str(wav_path)
+        # Log timing
+        elapsed_s = (perf_counter_ns() - func_start) / 1_000_000_000
+        audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
+        logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
+                    f"in {elapsed_s:.2f}s. Speed: {audio_len_s/elapsed_s:.2f}x")
+>>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
+
+        del audios
+        return str(wav_path)
     except Exception as e:
         logger.exception(f"CRITICAL ERROR during MODEL.generate or save_wav: {e}")
         raise
+<<<<<<< HEAD
     finally:
         # VRAM Leak Fix: Smart garbage collection based on threshold
         if DEVICE.startswith("cuda") and torch.cuda.is_available():
@@ -326,6 +335,8 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
                 logger.info(f"VRAM reserved ({reserved_gb:.2f} GB) exceeded limit ({vram_limit_gb} GB). Clearing cache...")
                 gc.collect()
                 torch.cuda.empty_cache()
+=======
+>>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
 
 
 # ---------------------------------------------------------------------------
