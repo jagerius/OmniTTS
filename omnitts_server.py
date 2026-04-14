@@ -12,6 +12,7 @@ Usage:
 import os
 import sys
 import re
+import gc
 from argparse import ArgumentParser
 from pathlib import Path
 from time import perf_counter_ns
@@ -65,7 +66,7 @@ else:
 
 MODEL: OmniVoice = None
 IGNORE_PING = None
-SILENCE_AUDIO_PATH = "assets/silence_100ms.wav"
+SILENCE_AUDIO_PATH = str(START_DIRECTORY / "assets" / "silence_100ms.wav")
 CACHE_DIR = START_DIRECTORY / "cache"
 
 
@@ -254,42 +255,29 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
             generation_config=gen_config,
         )
 
-<<<<<<< HEAD
-            # Save first audio result
-            audio_tensor = audios[0]
-            
-            if audio_tensor.numel() == 0:
-                logger.warning(f"Model generated empty audio for text: '{text}'. Using silence fallback.")
-                wav_path = Path(SILENCE_AUDIO_PATH).absolute()
-                audio_len_s = 0.0
-            else:
-                wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
-                audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
-
-            # Log timing
-            elapsed_s = (perf_counter_ns() - func_start) / 1_000_000_000
-            
-            speed_factor = (audio_len_s / elapsed_s) if elapsed_s > 0 else 0.0
-            logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
-                        f"in {elapsed_s:.2f}s. Speed: {speed_factor:.2f}x")
-=======
         # Save first audio result
         audio_tensor = audios[0]
-        wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
+        
+        if audio_tensor.numel() == 0:
+            logger.warning(f"Model generated empty audio for text: '{text}'. Using silence fallback.")
+            wav_path = Path(SILENCE_AUDIO_PATH).absolute()
+            audio_len_s = 0.0
+        else:
+            wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
+            audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
 
         # Log timing
         elapsed_s = (perf_counter_ns() - func_start) / 1_000_000_000
-        audio_len_s = audio_tensor.shape[-1] / MODEL.sampling_rate
+        
+        speed_factor = (audio_len_s / elapsed_s) if elapsed_s > 0 else 0.0
         logger.info(f"Generated audio: {audio_len_s:.2f}s @ {MODEL.sampling_rate/1000:.0f}kHz "
-                    f"in {elapsed_s:.2f}s. Speed: {audio_len_s/elapsed_s:.2f}x")
->>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
+                    f"in {elapsed_s:.2f}s. Speed: {speed_factor:.2f}x")
 
         del audios
         return str(wav_path)
     except Exception as e:
         logger.exception(f"CRITICAL ERROR during MODEL.generate or save_wav: {e}")
         raise
-<<<<<<< HEAD
     finally:
         # VRAM Leak Fix: Smart garbage collection based on threshold
         if DEVICE.startswith("cuda") and torch.cuda.is_available():
@@ -300,8 +288,6 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
                 logger.info(f"VRAM reserved ({reserved_gb:.2f} GB) exceeded limit ({vram_limit_gb} GB). Clearing cache...")
                 gc.collect()
                 torch.cuda.empty_cache()
-=======
->>>>>>> parent of 4f9d431 (feat: implement LRU memory cache limit for voice prompts and optimize VRAM management with garbage collection and CUDA cache clearing)
 
 
 # ---------------------------------------------------------------------------
