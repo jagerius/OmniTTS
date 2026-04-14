@@ -19,10 +19,6 @@ OmniTTS 是一款高性能文本转语音 (TTS) 模块，用来替换 SkyrimNet 
 1. 进入 SkyrimNet 安装目录下的 `OmniTTS` 文件夹。
 2. 运行 `setup_venv.bat` 脚本（Windows系统）。该脚本将自动创建 Python 虚拟环境，并安装包括支持 CUDA 的 PyTorch 等所有必需依赖库。
 3. 请确保将目标 NPC 的语音参考样本 `.wav` 文件放置在 `speakers/` 目录中。
-4. **Windows 用户注意事项**: OmniVoice 需要 `torchcodec` 库，而该库依赖于完整版的 FFmpeg。
-   - 请从 [BtBN FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases) 下载完整版 (FULL) 的 FFmpeg。
-   - 解压缩文件并将文件夹重命名为 `ffmpeg`。
-   - 将此 `ffmpeg` 文件夹直接放在根目录（`SkyrimNetOmniVoice`）或 `OmniTTS` 文件夹内，从而确保存在 `ffmpeg/bin` 路径。OmniTTS 将自动检测并加载，以防止程序崩溃。
 
 > [!NOTE]
 > 默认情况下，OmniTTS 需要 NVIDIA 显卡才能运行（它使用 CUDA 加速）。如果您没有兼容的 GPU，您可以通过在 `omnitts_config.txt` 文件中设置 `use_cpu = true` 来强制在处理器 (CPU) 上运行（注意：生成速度将明显变慢）。

@@ -19,10 +19,6 @@ OmniTTS is a high-performance, drop-in text-to-speech (TTS) module replacing the
 1. Navigate to the `OmniTTS` directory inside your SkyrimNet installation.
 2. Run `setup_venv.bat` (Windows). This script will automatically create a Python virtual environment and install all necessary dependencies, including PyTorch with CUDA support.
 3. Make sure to provide voice sample `.wav` files inside the `speakers/` directory for character voice cloning.
-4. **Important for Windows users**: OmniVoice requires the `torchcodec` library, which relies on a full installation of FFmpeg. 
-   - Download the full FFmpeg build from [BtBN FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds/releases).
-   - Extract the contents and rename the folder to `ffmpeg`.
-   - Place this `ffmpeg` folder directly inside the parent directory (`SkyrimNetOmniVoice`), or inside `OmniTTS`, so that the path `ffmpeg/bin` exists. OmniTTS will automatically detect and load the FFmpeg DLLs to prevent crashes.
 
 > [!NOTE]
 > By default, OmniTTS requires an NVIDIA graphics card to run (it uses CUDA acceleration). If you do not have a compatible GPU, you can force it to run on your processor (CPU) by setting `use_cpu = true` in the `omnitts_config.txt` file (note: generation will be significantly slower).
