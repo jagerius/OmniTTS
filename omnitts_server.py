@@ -48,11 +48,19 @@ START_DIRECTORY = Path.cwd()
 _initial_config = load_config()
 _use_cpu_override = _initial_config.get("use_cpu", "false").lower() == "true"
 
+# Check for --device in launch args early
+_custom_device = "cuda:0"
+if "--device" in sys.argv:
+    try:
+        _custom_device = sys.argv[sys.argv.index("--device") + 1]
+    except IndexError:
+        pass
+
 # Force CUDA if available
 if torch.cuda.is_available() and not _use_cpu_override:
-    DEVICE = "cuda:0"
+    DEVICE = _custom_device
     DTYPE = torch.bfloat16
-    logger.info(f"CUDA available: {torch.cuda.get_device_name(0)} (VRAM: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB)")
+    logger.info(f"CUDA available: {torch.cuda.get_device_name(DEVICE)} (Using device: {DEVICE}) (VRAM: {torch.cuda.get_device_properties(DEVICE).total_memory / 1024**3:.1f} GB)")
 else:
     DEVICE = "cpu"
     DTYPE = torch.float32
@@ -506,6 +514,8 @@ def parse_arguments():
                         help="Clear output directories and exit")
     parser.add_argument("--clearcache", action="store_true",
                         help="Clear cache files and exit")
+    parser.add_argument("--device", type=str, default="cuda:0",
+                        help="CUDA device to use (e.g., cuda:0, cuda:1)")
     return parser.parse_args()
 
 
