@@ -18,6 +18,7 @@ from pathlib import Path
 from time import perf_counter_ns
 
 import gradio as gr
+import numpy as np
 import torch
 from loguru import logger
 
@@ -257,8 +258,10 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
 
         # Save first audio result
         audio_tensor = audios[0]
-        
-        if audio_tensor.numel() == 0:
+        _is_numpy = isinstance(audio_tensor, np.ndarray)
+        _is_empty = audio_tensor.size == 0 if _is_numpy else audio_tensor.numel() == 0
+
+        if _is_empty:
             logger.warning(f"Model generated empty audio for text: '{text}'. Using silence fallback.")
             wav_path = Path(SILENCE_AUDIO_PATH).absolute()
             audio_len_s = 0.0
