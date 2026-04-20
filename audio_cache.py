@@ -89,6 +89,7 @@ def save_wav(audio_tensor, sample_rate: int,
 
     _is_numpy = isinstance(audio_tensor, np.ndarray)
 
+    # Cleanup old output folders (keep max 10)
     output_temp = START_DIRECTORY / "output_temp"
     if output_temp.exists():
         folders = [f for f in output_temp.iterdir() if f.is_dir()]
@@ -96,16 +97,19 @@ def save_wav(audio_tensor, sample_rate: int,
         for folder in folders[10:]:
             shutil.rmtree(folder, ignore_errors=True)
 
+    # Create timestamped output directory
     timestamp = str(int(time() * 1000))
     output_dir = output_temp / timestamp
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Name the file based on the reference speaker
     if audio_prompt_path and Path(audio_prompt_path).stem:
         base_name = Path(audio_prompt_path).stem
     else:
         base_name = "generated"
     wav_path = output_dir / f"{base_name}.wav"
 
+    # Resample if needed
     if target_sample_rate and sample_rate != target_sample_rate:
         import torchaudio
         if _is_numpy:
@@ -114,6 +118,7 @@ def save_wav(audio_tensor, sample_rate: int,
         audio_tensor = torchaudio.functional.resample(audio_tensor, sample_rate, target_sample_rate)
         sample_rate = target_sample_rate
 
+    # Save audio as WAV using soundfile (avoids torchaudio torchcodec dep)
     if _is_numpy:
         audio_np = audio_tensor
         if audio_np.ndim == 1:
@@ -121,7 +126,8 @@ def save_wav(audio_tensor, sample_rate: int,
     else:
         if audio_tensor.dim() == 1:
             audio_tensor = audio_tensor.unsqueeze(0)
-        audio_np = audio_tensor.cpu().float().numpy().T
+        # soundfile expects (T, C) float32 numpy array
+        audio_np = audio_tensor.cpu().float().numpy().T  # (1, T) -> (T, 1)
 
     sf.write(str(wav_path), audio_np, sample_rate)
     logger.info(f"Saved WAV: {wav_path} @ {sample_rate}Hz")
