@@ -392,7 +392,13 @@ def generate_audio(
 # ---------------------------------------------------------------------------
 with gr.Blocks() as demo:
 
-    gr.set_static_paths(["assets", "cache", "output_temp"])
+    gr.set_static_paths([
+        str(START_DIRECTORY / "assets"),
+        str(START_DIRECTORY / "cache"),
+        str(START_DIRECTORY / "output_temp"),
+        str(START_DIRECTORY / "speakers"),
+        str(START_DIRECTORY.parent),
+    ])
 
     # --- Visible UI ---
     with gr.Row():
