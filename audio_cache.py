@@ -12,6 +12,7 @@ import os
 from pathlib import Path
 from time import time
 
+import numpy as np
 import soundfile as sf
 import torch
 from loguru import logger
@@ -76,7 +77,7 @@ def save_prompt_cache(cache_key: str, prompt, cache_dir: Path,
             logger.warning(f"Failed to save disk cache {disk_path}: {e}")
 
 
-def save_wav(audio_tensor: torch.Tensor, sample_rate: int,
+def save_wav(audio_tensor, sample_rate: int,
              audio_prompt_path: str | None = None,
              target_sample_rate: int = 44100) -> Path:
     """
@@ -85,7 +86,9 @@ def save_wav(audio_tensor: torch.Tensor, sample_rate: int,
     Returns the absolute path to the WAV file (required by Gradio 5.x).
     """
     import shutil
-    
+
+    _is_numpy = isinstance(audio_tensor, np.ndarray)
+
     # Cleanup old output folders (keep max 10)
     output_temp = START_DIRECTORY / "output_temp"
     if output_temp.exists():
@@ -109,15 +112,23 @@ def save_wav(audio_tensor: torch.Tensor, sample_rate: int,
     # Resample if needed
     if target_sample_rate and sample_rate != target_sample_rate:
         import torchaudio
+        if _is_numpy:
+            audio_tensor = torch.from_numpy(audio_tensor)
+            _is_numpy = False
         audio_tensor = torchaudio.functional.resample(audio_tensor, sample_rate, target_sample_rate)
         sample_rate = target_sample_rate
 
-    # Save audio tensor as WAV using soundfile (avoids torchaudio torchcodec dep)
-    if audio_tensor.dim() == 1:
-        audio_tensor = audio_tensor.unsqueeze(0)
+    # Save audio as WAV using soundfile (avoids torchaudio torchcodec dep)
+    if _is_numpy:
+        audio_np = audio_tensor
+        if audio_np.ndim == 1:
+            audio_np = audio_np.reshape(-1, 1)
+    else:
+        if audio_tensor.dim() == 1:
+            audio_tensor = audio_tensor.unsqueeze(0)
+        # soundfile expects (T, C) float32 numpy array
+        audio_np = audio_tensor.cpu().float().numpy().T  # (1, T) -> (T, 1)
 
-    # soundfile expects (T, C) float32 numpy array
-    audio_np = audio_tensor.cpu().float().numpy().T  # (1, T) -> (T, 1)
     sf.write(str(wav_path), audio_np, sample_rate)
     logger.info(f"Saved WAV: {wav_path} @ {sample_rate}Hz")
 
