@@ -75,7 +75,7 @@ else:
 
 MODEL: OmniVoice = None
 IGNORE_PING = None
-SILENCE_AUDIO_PATH = str(START_DIRECTORY / "assets" / "silence_100ms.wav")
+SILENCE_AUDIO_PATH = "assets/silence_100ms.wav"  # Relative path for Gradio
 CACHE_DIR = START_DIRECTORY / "cache"
 
 
@@ -271,7 +271,7 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
 
         if _is_empty:
             logger.warning(f"Model generated empty audio for text: '{text}'. Using silence fallback.")
-            wav_path = Path(SILENCE_AUDIO_PATH).absolute()
+            wav_path = SILENCE_AUDIO_PATH
             audio_len_s = 0.0
         else:
             wav_path = save_wav(audio_tensor, MODEL.sampling_rate, speaker_audio)
@@ -285,7 +285,14 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
                     f"in {elapsed_s:.2f}s. Speed: {speed_factor:.2f}x")
 
         del audios
-        return str(wav_path)
+        
+        # Convert to relative path for Gradio (Chatterbox compatibility)
+        try:
+            relative_path = Path(wav_path).relative_to(START_DIRECTORY)
+            return str(relative_path).replace("\\", "/")
+        except ValueError:
+            # If not relative to START_DIRECTORY, return as-is
+            return str(wav_path)
     except Exception as e:
         logger.exception(f"CRITICAL ERROR during MODEL.generate or save_wav: {e}")
         raise
