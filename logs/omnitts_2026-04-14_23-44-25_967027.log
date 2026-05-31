@@ -1,0 +1,752 @@
+2026-04-14 23:44:25.967 | INFO     | config_utils:setup_logging:272 - File logging enabled: F:\AI\SkyrimNetOmniVoice\OmniTTS\logs (rotation: 50 MB, retention: 7 days)
+2026-04-14 23:44:25.967 | DEBUG    | config_utils:setup_logging:277 - Log level set to: DEBUG
+2026-04-14 23:44:25.967 | INFO     | __main__:<module>:675 - ============================================================
+2026-04-14 23:44:25.967 | INFO     | __main__:<module>:676 -   OmniTTS Server v1.1.0 for SkyrimNet
+2026-04-14 23:44:25.967 | INFO     | __main__:<module>:677 -   Powered by OmniVoice (k2-fsa)
+2026-04-14 23:44:25.967 | INFO     | __main__:<module>:678 - ============================================================
+2026-04-14 23:44:25.975 | INFO     | __main__:__init__:105 - CUDA available: NVIDIA GeForce RTX 4090 (VRAM: 23.6 GB)
+2026-04-14 23:44:25.975 | INFO     | __main__:load_model:133 - Loading OmniVoice from: k2-fsa/omnivoice
+2026-04-14 23:44:25.975 | INFO     | __main__:load_model:134 - Device: cuda:0, Dtype: torch.bfloat16, Load ASR: False
+2026-04-14 23:44:25.975 | INFO     | __main__:load_model:138 - Enabling TF32 optimizations
+2026-04-14 23:44:25.975 | INFO     | __main__:load_model:153 - Attention backend: PyTorch SDPA (FlashAttention enabled on compatible GPUs)
+2026-04-14 23:44:29.924 | INFO     | __main__:load_model:176 - Model loaded. Sampling rate: 24000 Hz
+2026-04-14 23:44:32.756 | INFO     | __main__:generate_audio:432 - Request: text="ping" language=pl speaker=player job_id=-1
+2026-04-14 23:44:32.757 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:44:32.758 | DEBUG    | audio_cache:load_prompt_cache:60 - Cache hit (disk): eeb4bb64ff5f77e496b5f75678dfd8a3
+2026-04-14 23:44:32.759 | INFO     | __main__:generate_tts:288 - Generating: "ping..." lang=Polish speaker=player.wav
+2026-04-14 23:44:32.759 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:44:33.348 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203073339\player.wav @ 44100Hz
+2026-04-14 23:44:33.349 | INFO     | __main__:generate_tts:348 - Generated: 1.20s @ 24kHz in 0.59s (2.03x realtime)
+2026-04-14 23:44:33.349 | INFO     | __main__:generate_audio:470 - First generation complete (ping pending): F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203073339\player.wav
+2026-04-14 23:44:57.020 | INFO     | __main__:generate_audio:432 - Request: text="Kurwa stary musisz mi pomoc!" language=pl speaker=player job_id=-1
+2026-04-14 23:44:57.020 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:44:57.021 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): eeb4bb64ff5f77e496b5f75678dfd8a3
+2026-04-14 23:44:57.021 | INFO     | __main__:generate_tts:288 - Generating: "Kurwa stary musisz mi pomoc!..." lang=Polish speaker=player.wav
+2026-04-14 23:44:57.021 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:44:58.219 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203098209\player.wav @ 44100Hz
+2026-04-14 23:44:58.219 | INFO     | __main__:generate_tts:348 - Generated: 2.20s @ 24kHz in 1.20s (1.84x realtime)
+2026-04-14 23:44:58.509 | INFO     | __main__:generate_audio:432 - Request: text="Jakis farmer morduje konie w stajni, chodz ze mną!" language=pl speaker=player job_id=-1
+2026-04-14 23:44:58.509 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:44:58.510 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): eeb4bb64ff5f77e496b5f75678dfd8a3
+2026-04-14 23:44:58.510 | INFO     | __main__:generate_tts:288 - Generating: "Jakis farmer morduje konie w stajni, chodz ze mną!..." lang=Polish speaker=player.wav
+2026-04-14 23:44:58.510 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:44:59.818 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203099814\player.wav @ 44100Hz
+2026-04-14 23:44:59.818 | INFO     | __main__:generate_tts:348 - Generated: 3.72s @ 24kHz in 1.31s (2.84x realtime)
+2026-04-14 23:45:00.105 | INFO     | __main__:generate_audio:432 - Request: text="W porządku." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:45:00.105 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:45:00.105 | INFO     | __main__:_get_cached_prompt:220 - Creating voice clone prompt from: malenordcommander.wav
+2026-04-14 23:45:00.105 | WARNING  | __main__:_get_cached_prompt:224 - load_asr_model=False but generating prompt for new voice malenordcommander.wav! This may fail if ASR is needed.
+2026-04-14 23:45:04.615 | DEBUG    | audio_cache:save_prompt_cache:84 - Saved to disk cache: F:\AI\SkyrimNetOmniVoice\OmniTTS\cache\31a484faf2447b2a66f676175a243a7f.pt
+2026-04-14 23:45:04.616 | INFO     | __main__:generate_tts:288 - Generating: "W porządku...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:45:04.616 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:45:06.000 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203105990\malenordcommander.wav @ 44100Hz
+2026-04-14 23:45:06.000 | INFO     | __main__:generate_tts:348 - Generated: 1.49s @ 24kHz in 5.90s (0.25x realtime)
+2026-04-14 23:45:06.001 | DEBUG    | __main__:generate_tts:376 - VRAM reserved (6.37 GB) > limit (5.0 GB). Clearing cache.
+2026-04-14 23:45:06.413 | INFO     | __main__:generate_audio:432 - Request: text="Pokaż mi drogę." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:45:06.413 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:45:06.413 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 31a484faf2447b2a66f676175a243a7f
+2026-04-14 23:45:06.413 | INFO     | __main__:generate_tts:288 - Generating: "Pokaż mi drogę...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:45:06.413 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:45:07.557 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203107547\malenordcommander.wav @ 44100Hz
+2026-04-14 23:45:07.557 | INFO     | __main__:generate_tts:348 - Generated: 1.61s @ 24kHz in 1.14s (1.41x realtime)
+2026-04-14 23:45:07.840 | INFO     | __main__:generate_audio:432 - Request: text="Ale jeśli to oszustwo, będziesz nocował w lochach." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:45:07.841 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:45:07.841 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 31a484faf2447b2a66f676175a243a7f
+2026-04-14 23:45:07.841 | INFO     | __main__:generate_tts:288 - Generating: "Ale jeśli to oszustwo, będziesz nocował w lochach...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:45:07.841 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:45:09.436 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203109433\malenordcommander.wav @ 44100Hz
+2026-04-14 23:45:09.436 | INFO     | __main__:generate_tts:348 - Generated: 3.56s @ 24kHz in 1.60s (2.23x realtime)
+2026-04-14 23:45:33.182 | INFO     | __main__:generate_audio:432 - Request: text="Śnieg zakryje wszystko, Alfarinn." language=pl speaker=dremora_m_fp job_id=-1
+2026-04-14 23:45:33.182 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:45:33.185 | DEBUG    | audio_cache:load_prompt_cache:60 - Cache hit (disk): 5e5f7c8e8c5185a980c1952f65019a76
+2026-04-14 23:45:33.185 | INFO     | __main__:generate_tts:288 - Generating: "Śnieg zakryje wszystko, Alfarinn...." lang=Polish speaker=dremora_m_fp.wav
+2026-04-14 23:45:33.185 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:45:34.609 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203134598\dremora_m_fp.wav @ 44100Hz
+2026-04-14 23:45:34.610 | INFO     | __main__:generate_tts:348 - Generated: 3.06s @ 24kHz in 1.43s (2.14x realtime)
+2026-04-14 23:45:34.901 | INFO     | __main__:generate_audio:432 - Request: text="Nawet twoje pytania." language=pl speaker=dremora_m_fp job_id=-1
+2026-04-14 23:45:34.901 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:45:34.901 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 5e5f7c8e8c5185a980c1952f65019a76
+2026-04-14 23:45:34.902 | INFO     | __main__:generate_tts:288 - Generating: "Nawet twoje pytania...." lang=Polish speaker=dremora_m_fp.wav
+2026-04-14 23:45:34.902 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:45:35.637 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203135635\dremora_m_fp.wav @ 44100Hz
+2026-04-14 23:45:35.638 | INFO     | __main__:generate_tts:348 - Generated: 2.00s @ 24kHz in 0.74s (2.72x realtime)
+2026-04-14 23:45:35.893 | INFO     | __main__:generate_audio:432 - Request: text="Nigdy nie powinieneś tu przyjść." language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:45:35.893 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:45:35.894 | DEBUG    | audio_cache:load_prompt_cache:60 - Cache hit (disk): 9d394fec902cd90b04fa3c369adb4965
+2026-04-14 23:45:35.894 | INFO     | __main__:generate_tts:288 - Generating: "Nigdy nie powinieneś tu przyjść...." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:45:35.894 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:45:36.291 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203136282\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:45:36.291 | INFO     | __main__:generate_tts:348 - Generated: 2.56s @ 24kHz in 0.40s (6.43x realtime)
+2026-04-14 23:55:05.041 | INFO     | __main__:generate_audio:432 - Request: text="Kurwa pomocy!" language=pl speaker=player job_id=-1
+2026-04-14 23:55:05.041 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:55:05.041 | INFO     | __main__:_get_cached_prompt:220 - Creating voice clone prompt from: player.wav
+2026-04-14 23:55:05.041 | WARNING  | __main__:_get_cached_prompt:224 - load_asr_model=False but generating prompt for new voice player.wav! This may fail if ASR is needed.
+2026-04-14 23:55:06.963 | DEBUG    | audio_cache:save_prompt_cache:84 - Saved to disk cache: F:\AI\SkyrimNetOmniVoice\OmniTTS\cache\7f3c96882fa20bd2a42763b12529104a.pt
+2026-04-14 23:55:06.963 | INFO     | __main__:generate_tts:288 - Generating: "Kurwa pomocy!..." lang=Polish speaker=player.wav
+2026-04-14 23:55:06.963 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:08.271 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203708267\player.wav @ 44100Hz
+2026-04-14 23:55:08.271 | INFO     | __main__:generate_tts:348 - Generated: 1.64s @ 24kHz in 3.23s (0.51x realtime)
+2026-04-14 23:55:08.271 | DEBUG    | __main__:generate_tts:376 - VRAM reserved (7.35 GB) > limit (5.0 GB). Clearing cache.
+2026-04-14 23:55:08.700 | INFO     | __main__:generate_audio:432 - Request: text="Chodz szybko ze mną!" language=pl speaker=player job_id=-1
+2026-04-14 23:55:08.701 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:55:08.701 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:55:08.701 | INFO     | __main__:generate_tts:288 - Generating: "Chodz szybko ze mną!..." lang=Polish speaker=player.wav
+2026-04-14 23:55:08.701 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:10.020 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203710011\player.wav @ 44100Hz
+2026-04-14 23:55:10.021 | INFO     | __main__:generate_tts:348 - Generated: 1.84s @ 24kHz in 1.32s (1.39x realtime)
+2026-04-14 23:55:10.307 | INFO     | __main__:generate_audio:432 - Request: text="Jakis szalony farmer zabija konie w stajni!" language=pl speaker=player job_id=-1
+2026-04-14 23:55:10.307 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:55:10.307 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:55:10.308 | INFO     | __main__:generate_tts:288 - Generating: "Jakis szalony farmer zabija konie w stajni!..." lang=Polish speaker=player.wav
+2026-04-14 23:55:10.308 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:11.592 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203711589\player.wav @ 44100Hz
+2026-04-14 23:55:11.593 | INFO     | __main__:generate_tts:348 - Generated: 3.32s @ 24kHz in 1.29s (2.58x realtime)
+2026-04-14 23:55:12.399 | INFO     | __main__:generate_audio:432 - Request: text="Prowadź." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:55:12.399 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:55:12.399 | INFO     | __main__:_get_cached_prompt:220 - Creating voice clone prompt from: malenordcommander.wav
+2026-04-14 23:55:12.399 | WARNING  | __main__:_get_cached_prompt:224 - load_asr_model=False but generating prompt for new voice malenordcommander.wav! This may fail if ASR is needed.
+2026-04-14 23:55:14.090 | DEBUG    | audio_cache:save_prompt_cache:84 - Saved to disk cache: F:\AI\SkyrimNetOmniVoice\OmniTTS\cache\4d91b8f749a28acaddde1898beb9ab14.pt
+2026-04-14 23:55:14.090 | INFO     | __main__:generate_tts:288 - Generating: "Prowadź...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:55:14.090 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:15.266 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203715256\malenordcommander.wav @ 44100Hz
+2026-04-14 23:55:15.266 | INFO     | __main__:generate_tts:348 - Generated: 1.40s @ 24kHz in 2.87s (0.49x realtime)
+2026-04-14 23:55:15.267 | DEBUG    | __main__:generate_tts:376 - VRAM reserved (6.37 GB) > limit (5.0 GB). Clearing cache.
+2026-04-14 23:55:15.682 | INFO     | __main__:generate_audio:432 - Request: text="To niedaleko, przy dokach?" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:55:15.682 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:55:15.683 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:55:15.683 | INFO     | __main__:generate_tts:288 - Generating: "To niedaleko, przy dokach?..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:55:15.683 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:16.849 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203716839\malenordcommander.wav @ 44100Hz
+2026-04-14 23:55:16.849 | INFO     | __main__:generate_tts:348 - Generated: 2.00s @ 24kHz in 1.17s (1.71x realtime)
+2026-04-14 23:55:53.062 | INFO     | __main__:generate_audio:432 - Request: text="Spokój, krew i śnieg, to tu trwałe rzeczy." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:55:53.062 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:55:53.062 | INFO     | __main__:_get_cached_prompt:220 - Creating voice clone prompt from: aaagenericnordfr.wav
+2026-04-14 23:55:53.063 | WARNING  | __main__:_get_cached_prompt:224 - load_asr_model=False but generating prompt for new voice aaagenericnordfr.wav! This may fail if ASR is needed.
+2026-04-14 23:55:54.914 | DEBUG    | audio_cache:save_prompt_cache:84 - Saved to disk cache: F:\AI\SkyrimNetOmniVoice\OmniTTS\cache\35d0b79bc119869077a8561b3687d225.pt
+2026-04-14 23:55:54.914 | INFO     | __main__:generate_tts:288 - Generating: "Spokój, krew i śnieg, to tu trwałe rzeczy...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:55:54.915 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:56.491 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203756482\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:55:56.492 | INFO     | __main__:generate_tts:348 - Generated: 3.72s @ 24kHz in 3.43s (1.08x realtime)
+2026-04-14 23:55:56.492 | DEBUG    | __main__:generate_tts:376 - VRAM reserved (6.91 GB) > limit (5.0 GB). Clearing cache.
+2026-04-14 23:55:56.904 | INFO     | __main__:generate_audio:432 - Request: text="A ty, koń, lepiej stój." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:55:56.904 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:55:56.904 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:55:56.904 | INFO     | __main__:generate_tts:288 - Generating: "A ty, koń, lepiej stój...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:55:56.904 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:55:58.334 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203758331\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:55:58.335 | INFO     | __main__:generate_tts:348 - Generated: 2.04s @ 24kHz in 1.43s (1.43x realtime)
+2026-04-14 23:56:09.950 | INFO     | __main__:generate_audio:432 - Request: text="Nie powinieneś tu był przychodzić." language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:56:09.950 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:56:09.950 | INFO     | __main__:_get_cached_prompt:220 - Creating voice clone prompt from: malecommoneraccented.wav
+2026-04-14 23:56:09.951 | WARNING  | __main__:_get_cached_prompt:224 - load_asr_model=False but generating prompt for new voice malecommoneraccented.wav! This may fail if ASR is needed.
+2026-04-14 23:56:11.803 | DEBUG    | audio_cache:save_prompt_cache:84 - Saved to disk cache: F:\AI\SkyrimNetOmniVoice\OmniTTS\cache\535a93c085754d48d9fb2003c075fcbd.pt
+2026-04-14 23:56:11.804 | INFO     | __main__:generate_tts:288 - Generating: "Nie powinieneś tu był przychodzić...." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:56:11.804 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:13.327 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203773324\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:56:13.328 | INFO     | __main__:generate_tts:348 - Generated: 2.72s @ 24kHz in 3.38s (0.81x realtime)
+2026-04-14 23:56:13.328 | DEBUG    | __main__:generate_tts:376 - VRAM reserved (6.67 GB) > limit (5.0 GB). Clearing cache.
+2026-04-14 23:56:13.742 | INFO     | __main__:generate_audio:432 - Request: text="ę ci kark." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:56:13.743 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:56:13.743 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:56:13.743 | INFO     | __main__:generate_tts:288 - Generating: "ę ci kark...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:56:13.743 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:15.446 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203775436\malenordcommander.wav @ 44100Hz
+2026-04-14 23:56:15.447 | INFO     | __main__:generate_tts:348 - Generated: 1.37s @ 24kHz in 1.70s (0.80x realtime)
+2026-04-14 23:56:15.727 | INFO     | __main__:generate_audio:432 - Request: text="na co was stać?" language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:56:15.728 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:56:15.728 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:56:15.728 | INFO     | __main__:generate_tts:288 - Generating: "na co was stać?..." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:56:15.728 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:17.679 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203777669\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:56:17.679 | INFO     | __main__:generate_tts:348 - Generated: 1.68s @ 24kHz in 1.95s (0.86x realtime)
+2026-04-14 23:56:17.959 | INFO     | __main__:generate_audio:432 - Request: text="Weergh!" language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:56:17.959 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:56:17.959 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:56:17.959 | INFO     | __main__:generate_tts:288 - Generating: "Weergh!..." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:56:17.959 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:19.912 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203779909\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:56:19.913 | INFO     | __main__:generate_tts:348 - Generated: 1.40s @ 24kHz in 1.95s (0.72x realtime)
+2026-04-14 23:56:21.307 | INFO     | __main__:generate_audio:432 - Request: text="Kurwa uspokojcie sie!" language=pl speaker=player job_id=-1
+2026-04-14 23:56:21.307 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:56:21.307 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:56:21.307 | INFO     | __main__:generate_tts:288 - Generating: "Kurwa uspokojcie sie!..." lang=Polish speaker=player.wav
+2026-04-14 23:56:21.307 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:23.183 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203783175\player.wav @ 44100Hz
+2026-04-14 23:56:23.184 | INFO     | __main__:generate_tts:348 - Generated: 1.92s @ 24kHz in 1.88s (1.02x realtime)
+2026-04-14 23:56:23.472 | INFO     | __main__:generate_audio:432 - Request: text="Nie. mogę. przestać. Jager, ten drań wali jak oszalały!" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:56:23.473 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:56:23.473 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:56:23.473 | INFO     | __main__:generate_tts:288 - Generating: "Nie. mogę. przestać. Jager, ten drań wali jak oszalały!..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:56:23.473 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:24.950 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203784947\malenordcommander.wav @ 44100Hz
+2026-04-14 23:56:24.950 | INFO     | __main__:generate_tts:348 - Generated: 3.80s @ 24kHz in 1.48s (2.57x realtime)
+2026-04-14 23:56:30.164 | INFO     | __main__:generate_audio:432 - Request: text="Lepiej on niż my." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:56:30.165 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:56:30.165 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:56:30.165 | INFO     | __main__:generate_tts:288 - Generating: "Lepiej on niż my...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:56:30.165 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:31.768 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203791760\malenordcommander.wav @ 44100Hz
+2026-04-14 23:56:31.769 | INFO     | __main__:generate_tts:348 - Generated: 1.72s @ 24kHz in 1.60s (1.07x realtime)
+2026-04-14 23:56:38.044 | INFO     | __main__:generate_audio:432 - Request: text="Kurwa, ten drań prawie mnie roztrzaskał." language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:56:38.045 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:56:38.045 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:56:38.045 | INFO     | __main__:generate_tts:288 - Generating: "Kurwa, ten drań prawie mnie roztrzaskał...." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:56:38.045 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:39.773 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203799764\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:56:39.774 | INFO     | __main__:generate_tts:348 - Generated: 3.12s @ 24kHz in 1.73s (1.80x realtime)
+2026-04-14 23:56:40.341 | INFO     | __main__:generate_audio:432 - Request: text="Spokój. przyjdzie." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:56:40.342 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:56:40.342 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:56:40.342 | INFO     | __main__:generate_tts:288 - Generating: "Spokój. przyjdzie...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:56:40.342 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:42.058 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203802048\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:56:42.059 | INFO     | __main__:generate_tts:348 - Generated: 1.63s @ 24kHz in 1.72s (0.95x realtime)
+2026-04-14 23:56:42.309 | INFO     | __main__:generate_audio:432 - Request: text="Jak noc po dniu." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:56:42.310 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:56:42.310 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:56:42.310 | INFO     | __main__:generate_tts:288 - Generating: "Jak noc po dniu...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:56:42.310 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:43.983 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203803973\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:56:43.984 | INFO     | __main__:generate_tts:348 - Generated: 1.74s @ 24kHz in 1.67s (1.04x realtime)
+2026-04-14 23:56:44.235 | INFO     | __main__:generate_audio:432 - Request: text="Tylko trzeba. przetrwać do niej." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:56:44.235 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:56:44.235 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:56:44.235 | INFO     | __main__:generate_tts:288 - Generating: "Tylko trzeba. przetrwać do niej...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:56:44.235 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:45.933 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203805930\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:56:45.933 | INFO     | __main__:generate_tts:348 - Generated: 2.74s @ 24kHz in 1.70s (1.61x realtime)
+2026-04-14 23:56:49.129 | INFO     | __main__:generate_audio:432 - Request: text="Dobrze ze Cie drogi strazniku zawolalem, niech ten szaleniec" language=pl speaker=player job_id=-1
+2026-04-14 23:56:49.129 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:56:49.129 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:56:49.129 | INFO     | __main__:generate_tts:288 - Generating: "Dobrze ze Cie drogi strazniku zawolalem, niech ten szaleniec sie wytlumaczy..." lang=Polish speaker=player.wav
+2026-04-14 23:56:49.129 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:51.377 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203811373\player.wav @ 44100Hz
+2026-04-14 23:56:51.378 | INFO     | __main__:generate_tts:348 - Generated: 5.72s @ 24kHz in 2.25s (2.54x realtime)
+2026-04-14 23:56:51.659 | INFO     | __main__:generate_audio:432 - Request: text="niepewnie, wciąż trzymając się za bok Nie jestem tu po to, ż" language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:56:51.660 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:56:51.660 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:56:51.660 | INFO     | __main__:generate_tts:288 - Generating: "niepewnie, wciąż trzymając się za bok Nie jestem tu po to, żeby się bić. Tylko p..." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:56:51.660 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:54.015 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203814004\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:56:54.016 | INFO     | __main__:generate_tts:348 - Generated: 6.84s @ 24kHz in 2.36s (2.90x realtime)
+2026-04-14 23:56:56.807 | INFO     | __main__:generate_audio:432 - Request: text="Dobry. moment na pomoc." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:56:56.808 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:56:56.808 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:56:56.808 | INFO     | __main__:generate_tts:288 - Generating: "Dobry. moment na pomoc...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:56:56.808 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:56:58.624 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203818616\malenordcommander.wav @ 44100Hz
+2026-04-14 23:56:58.625 | INFO     | __main__:generate_tts:348 - Generated: 1.83s @ 24kHz in 1.82s (1.01x realtime)
+2026-04-14 23:56:58.900 | INFO     | __main__:generate_audio:432 - Request: text="Ten szaleniec miał siłę." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:56:58.900 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:56:58.901 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:56:58.901 | INFO     | __main__:generate_tts:288 - Generating: "Ten szaleniec miał siłę...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:56:58.901 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:00.420 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203820411\malenordcommander.wav @ 44100Hz
+2026-04-14 23:57:00.420 | INFO     | __main__:generate_tts:348 - Generated: 1.86s @ 24kHz in 1.52s (1.22x realtime)
+2026-04-14 23:57:00.696 | INFO     | __main__:generate_audio:432 - Request: text="Śnieg tu nie tylko zakryje krew. ale i wasze trupy, jeśli ni" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:00.697 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:00.697 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:00.697 | INFO     | __main__:generate_tts:288 - Generating: "Śnieg tu nie tylko zakryje krew. ale i wasze trupy, jeśli nie przestaniecie...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:00.697 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:02.390 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203822386\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:02.391 | INFO     | __main__:generate_tts:348 - Generated: 6.80s @ 24kHz in 1.69s (4.01x realtime)
+2026-04-14 23:57:06.463 | INFO     | __main__:generate_audio:432 - Request: text="Mówię ci po raz kolejny. ja tu tylko jeżdżę." language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:57:06.464 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:57:06.464 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:57:06.464 | INFO     | __main__:generate_tts:288 - Generating: "Mówię ci po raz kolejny. ja tu tylko jeżdżę...." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:57:06.464 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:08.421 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203828412\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:57:08.422 | INFO     | __main__:generate_tts:348 - Generated: 3.24s @ 24kHz in 1.96s (1.65x realtime)
+2026-04-14 23:57:08.672 | INFO     | __main__:generate_audio:432 - Request: text="Nie mam z tobą żadnego interesu." language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:57:08.672 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:57:08.673 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:57:08.673 | INFO     | __main__:generate_tts:288 - Generating: "Nie mam z tobą żadnego interesu...." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:57:08.673 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:10.356 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203830352\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:57:10.356 | INFO     | __main__:generate_tts:348 - Generated: 2.48s @ 24kHz in 1.68s (1.47x realtime)
+2026-04-14 23:57:42.747 | INFO     | __main__:generate_audio:432 - Request: text="Co Ty kurwa odpierdalasz Erburg, zajebałeś właśnie komuś kon" language=pl speaker=player job_id=-1
+2026-04-14 23:57:42.747 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:57:42.747 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:57:42.747 | INFO     | __main__:generate_tts:288 - Generating: "Co Ty kurwa odpierdalasz Erburg, zajebałeś właśnie komuś konia, strażnicy Cię sz..." lang=Polish speaker=player.wav
+2026-04-14 23:57:42.747 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:44.095 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203864091\player.wav @ 44100Hz
+2026-04-14 23:57:44.095 | INFO     | __main__:generate_tts:348 - Generated: 6.44s @ 24kHz in 1.35s (4.78x realtime)
+2026-04-14 23:57:44.713 | INFO     | __main__:generate_audio:432 - Request: text="Koń?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:44.713 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:44.713 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:44.713 | INFO     | __main__:generate_tts:288 - Generating: "Koń?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:44.713 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:45.772 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203865763\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:45.773 | INFO     | __main__:generate_tts:348 - Generated: 1.24s @ 24kHz in 1.06s (1.17x realtime)
+2026-04-14 23:57:46.062 | INFO     | __main__:generate_audio:432 - Request: text="Ten, co mnie kopał, już nie żyje." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:46.062 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:46.062 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:46.062 | INFO     | __main__:generate_tts:288 - Generating: "Ten, co mnie kopał, już nie żyje...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:46.062 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:47.237 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203867227\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:47.238 | INFO     | __main__:generate_tts:348 - Generated: 2.88s @ 24kHz in 1.18s (2.45x realtime)
+2026-04-14 23:57:47.493 | INFO     | __main__:generate_audio:432 - Request: text="Straż?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:47.493 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:47.493 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:47.493 | INFO     | __main__:generate_tts:288 - Generating: "Straż?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:47.493 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:48.555 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203868546\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:48.555 | INFO     | __main__:generate_tts:348 - Generated: 1.40s @ 24kHz in 1.06s (1.32x realtime)
+2026-04-14 23:57:48.841 | INFO     | __main__:generate_audio:432 - Request: text="Niech przyjdą." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:48.841 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:48.841 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:48.841 | INFO     | __main__:generate_tts:288 - Generating: "Niech przyjdą...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:48.841 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:49.914 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203869905\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:49.914 | INFO     | __main__:generate_tts:348 - Generated: 1.80s @ 24kHz in 1.07s (1.68x realtime)
+2026-04-14 23:57:50.190 | INFO     | __main__:generate_audio:432 - Request: text="Są tylko ludźmi." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:50.190 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:50.190 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:50.190 | INFO     | __main__:generate_tts:288 - Generating: "Są tylko ludźmi...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:50.190 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:51.322 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203871311\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:51.323 | INFO     | __main__:generate_tts:348 - Generated: 1.76s @ 24kHz in 1.13s (1.55x realtime)
+2026-04-14 23:57:51.600 | INFO     | __main__:generate_audio:432 - Request: text="A ja. jestem burzą, co zostaje po ogniu." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:57:51.601 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:57:51.601 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:57:51.601 | INFO     | __main__:generate_tts:288 - Generating: "A ja. jestem burzą, co zostaje po ogniu...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:57:51.601 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:57:52.630 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203872627\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:57:52.631 | INFO     | __main__:generate_tts:348 - Generated: 3.50s @ 24kHz in 1.03s (3.40x realtime)
+2026-04-14 23:58:18.045 | INFO     | __main__:generate_audio:432 - Request: text="Odjebało Ci do reszty typie" language=pl speaker=player job_id=-1
+2026-04-14 23:58:18.045 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:58:18.045 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:58:18.046 | INFO     | __main__:generate_tts:288 - Generating: "Odjebało Ci do reszty typie..." lang=Polish speaker=player.wav
+2026-04-14 23:58:18.046 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:19.167 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203899158\player.wav @ 44100Hz
+2026-04-14 23:58:19.168 | INFO     | __main__:generate_tts:348 - Generated: 2.16s @ 24kHz in 1.12s (1.92x realtime)
+2026-04-14 23:58:20.149 | INFO     | __main__:generate_audio:432 - Request: text="Spokój. spokój, mówicie?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:20.149 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:20.150 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:20.150 | INFO     | __main__:generate_tts:288 - Generating: "Spokój. spokój, mówicie?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:20.150 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:21.269 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203901259\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:21.270 | INFO     | __main__:generate_tts:348 - Generated: 2.24s @ 24kHz in 1.12s (2.00x realtime)
+2026-04-14 23:58:21.555 | INFO     | __main__:generate_audio:432 - Request: text="Wszystko tu się pali, a wy słyszycie tylko dźwięk własnego s" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:21.556 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:21.556 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:21.556 | INFO     | __main__:generate_tts:288 - Generating: "Wszystko tu się pali, a wy słyszycie tylko dźwięk własnego strachu...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:21.556 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:22.649 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203902638\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:22.650 | INFO     | __main__:generate_tts:348 - Generated: 6.08s @ 24kHz in 1.09s (5.56x realtime)
+2026-04-14 23:58:32.569 | INFO     | __main__:generate_audio:432 - Request: text="Ty mówisz o spokoju, a sam wyglądasz jakbyś miał lada moment" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:32.569 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:32.570 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:32.570 | INFO     | __main__:generate_tts:288 - Generating: "Ty mówisz o spokoju, a sam wyglądasz jakbyś miał lada moment wyzionąć ducha...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:32.570 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:33.805 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203913794\malenordcommander.wav @ 44100Hz
+2026-04-14 23:58:33.805 | INFO     | __main__:generate_tts:348 - Generated: 5.32s @ 24kHz in 1.24s (4.30x realtime)
+2026-04-14 23:58:34.056 | INFO     | __main__:generate_audio:432 - Request: text="Co cię tu przywiodło, morderco koni?" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:34.056 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:34.056 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:34.056 | INFO     | __main__:generate_tts:288 - Generating: "Co cię tu przywiodło, morderco koni?..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:34.056 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:35.172 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203915169\malenordcommander.wav @ 44100Hz
+2026-04-14 23:58:35.172 | INFO     | __main__:generate_tts:348 - Generated: 2.47s @ 24kHz in 1.12s (2.21x realtime)
+2026-04-14 23:58:35.407 | INFO     | __main__:generate_audio:432 - Request: text="Śnieg. pada." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:35.407 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:35.407 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:35.407 | INFO     | __main__:generate_tts:288 - Generating: "Śnieg. pada...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:35.407 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:36.592 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203916590\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:36.593 | INFO     | __main__:generate_tts:348 - Generated: 1.28s @ 24kHz in 1.19s (1.08x realtime)
+2026-04-14 23:58:36.875 | INFO     | __main__:generate_audio:432 - Request: text="Ogień. gaśnie." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:36.875 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:36.875 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:36.876 | INFO     | __main__:generate_tts:288 - Generating: "Ogień. gaśnie...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:36.876 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:38.102 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203918093\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:38.102 | INFO     | __main__:generate_tts:348 - Generated: 1.80s @ 24kHz in 1.23s (1.47x realtime)
+2026-04-14 23:58:38.361 | INFO     | __main__:generate_audio:432 - Request: text="A ty, strażniku, stoisz po tej stronie płotu, jakbyś był czy" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:38.361 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:38.362 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:38.362 | INFO     | __main__:generate_tts:288 - Generating: "A ty, strażniku, stoisz po tej stronie płotu, jakbyś był czysty...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:38.362 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:39.626 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203919616\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:39.627 | INFO     | __main__:generate_tts:348 - Generated: 5.42s @ 24kHz in 1.26s (4.29x realtime)
+2026-04-14 23:58:39.907 | INFO     | __main__:generate_audio:432 - Request: text="Tu nie chodzi o konia." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:39.907 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:39.908 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:39.908 | INFO     | __main__:generate_tts:288 - Generating: "Tu nie chodzi o konia...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:39.908 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:41.011 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203921002\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:41.012 | INFO     | __main__:generate_tts:348 - Generated: 2.04s @ 24kHz in 1.10s (1.85x realtime)
+2026-04-14 23:58:41.303 | INFO     | __main__:generate_audio:432 - Request: text="Ani o ciebie." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:41.303 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:41.303 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:41.303 | INFO     | __main__:generate_tts:288 - Generating: "Ani o ciebie...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:41.303 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:42.374 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203922365\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:42.375 | INFO     | __main__:generate_tts:348 - Generated: 1.68s @ 24kHz in 1.07s (1.57x realtime)
+2026-04-14 23:58:42.667 | INFO     | __main__:generate_audio:432 - Request: text="To, co się paliło na farmie. to nie moje wino." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:42.667 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:42.667 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:42.668 | INFO     | __main__:generate_tts:288 - Generating: "To, co się paliło na farmie. to nie moje wino...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:42.668 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:43.799 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203923789\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:43.800 | INFO     | __main__:generate_tts:348 - Generated: 3.87s @ 24kHz in 1.13s (3.42x realtime)
+2026-04-14 23:58:44.075 | INFO     | __main__:generate_audio:432 - Request: text="Ale ja to dokończę." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:44.076 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:44.076 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:44.076 | INFO     | __main__:generate_tts:288 - Generating: "Ale ja to dokończę...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:44.076 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:45.107 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203925098\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:45.108 | INFO     | __main__:generate_tts:348 - Generated: 1.47s @ 24kHz in 1.03s (1.42x realtime)
+2026-04-14 23:58:45.360 | INFO     | __main__:generate_audio:432 - Request: text="To ty jesteś tym szaleńcem, co palił stodołę przy południowe" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:45.360 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:45.360 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:45.361 | INFO     | __main__:generate_tts:288 - Generating: "To ty jesteś tym szaleńcem, co palił stodołę przy południowej bramie?..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:45.361 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:46.495 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203926492\malenordcommander.wav @ 44100Hz
+2026-04-14 23:58:46.495 | INFO     | __main__:generate_tts:348 - Generated: 4.86s @ 24kHz in 1.14s (4.28x realtime)
+2026-04-14 23:58:46.790 | INFO     | __main__:generate_audio:432 - Request: text="Miałeś szczęście, że patrol nie przyszedł wcześniej." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:46.790 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:46.790 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:46.790 | INFO     | __main__:generate_tts:288 - Generating: "Miałeś szczęście, że patrol nie przyszedł wcześniej...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:46.791 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:47.945 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203927935\malenordcommander.wav @ 44100Hz
+2026-04-14 23:58:47.945 | INFO     | __main__:generate_tts:348 - Generated: 3.80s @ 24kHz in 1.16s (3.29x realtime)
+2026-04-14 23:58:48.204 | INFO     | __main__:generate_audio:432 - Request: text="A teraz tu stoisz, ranny jak wilk, i bredzisz o ogniu jak pr" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:48.204 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:48.204 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:48.204 | INFO     | __main__:generate_tts:288 - Generating: "A teraz tu stoisz, ranny jak wilk, i bredzisz o ogniu jak przeklęty szaman...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:48.204 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:49.398 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203929394\malenordcommander.wav @ 44100Hz
+2026-04-14 23:58:49.398 | INFO     | __main__:generate_tts:348 - Generated: 5.12s @ 24kHz in 1.19s (4.29x realtime)
+2026-04-14 23:58:49.674 | INFO     | __main__:generate_audio:432 - Request: text="Śnieg. pada." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:49.674 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:49.674 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:49.674 | INFO     | __main__:generate_tts:288 - Generating: "Śnieg. pada...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:49.674 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:50.784 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203930775\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:50.785 | INFO     | __main__:generate_tts:348 - Generated: 1.68s @ 24kHz in 1.11s (1.51x realtime)
+2026-04-14 23:58:51.038 | INFO     | __main__:generate_audio:432 - Request: text="Ogień. nie." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:51.038 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:51.038 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:51.038 | INFO     | __main__:generate_tts:288 - Generating: "Ogień. nie...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:51.038 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:52.173 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203932164\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:52.174 | INFO     | __main__:generate_tts:348 - Generated: 1.64s @ 24kHz in 1.14s (1.44x realtime)
+2026-04-14 23:58:52.463 | INFO     | __main__:generate_audio:432 - Request: text="A ja?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:52.463 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:52.464 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:52.464 | INFO     | __main__:generate_tts:288 - Generating: "A ja?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:52.464 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:53.570 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203933561\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:53.571 | INFO     | __main__:generate_tts:348 - Generated: 1.24s @ 24kHz in 1.11s (1.12x realtime)
+2026-04-14 23:58:53.827 | INFO     | __main__:generate_audio:432 - Request: text="Ja już dawno przestałem być człowiekiem, którego szukacie." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:58:53.827 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:58:53.828 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:58:53.828 | INFO     | __main__:generate_tts:288 - Generating: "Ja już dawno przestałem być człowiekiem, którego szukacie...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:58:53.828 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:55.057 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203935054\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:58:55.058 | INFO     | __main__:generate_tts:348 - Generated: 5.29s @ 24kHz in 1.23s (4.30x realtime)
+2026-04-14 23:58:55.347 | INFO     | __main__:generate_audio:432 - Request: text="Kto tam jest?" language=pl speaker=malecommoneraccented job_id=-1
+2026-04-14 23:58:55.347 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=7514926385921576569, speaker_noised=None
+2026-04-14 23:58:55.347 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 535a93c085754d48d9fb2003c075fcbd
+2026-04-14 23:58:55.348 | INFO     | __main__:generate_tts:288 - Generating: "Kto tam jest?..." lang=Polish speaker=malecommoneraccented.wav
+2026-04-14 23:58:55.348 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:56.482 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203936480\malecommoneraccented.wav @ 44100Hz
+2026-04-14 23:58:56.482 | INFO     | __main__:generate_tts:348 - Generated: 1.64s @ 24kHz in 1.13s (1.45x realtime)
+2026-04-14 23:58:56.758 | INFO     | __main__:generate_audio:432 - Request: text="bić!" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:56.758 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:56.759 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:56.759 | INFO     | __main__:generate_tts:288 - Generating: "bić!..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:56.759 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:58:57.885 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203937882\malenordcommander.wav @ 44100Hz
+2026-04-14 23:58:57.885 | INFO     | __main__:generate_tts:348 - Generated: 1.08s @ 24kHz in 1.13s (0.96x realtime)
+2026-04-14 23:58:59.299 | INFO     | __main__:generate_audio:432 - Request: text="Erburga z rosnącym zaniepokojeniem Nie jesteś już człowiekie" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:58:59.299 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:58:59.299 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:58:59.299 | INFO     | __main__:generate_tts:288 - Generating: "Erburga z rosnącym zaniepokojeniem Nie jesteś już człowiekiem? To może upiór, co..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:58:59.299 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:01.144 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203941133\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:01.144 | INFO     | __main__:generate_tts:348 - Generated: 11.72s @ 24kHz in 1.84s (6.35x realtime)
+2026-04-14 23:59:08.638 | INFO     | __main__:generate_audio:432 - Request: text="Śnieg. pada." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:08.638 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:08.638 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:08.638 | INFO     | __main__:generate_tts:288 - Generating: "Śnieg. pada...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:08.638 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:10.165 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203950162\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:10.165 | INFO     | __main__:generate_tts:348 - Generated: 1.56s @ 24kHz in 1.53s (1.02x realtime)
+2026-04-14 23:59:10.420 | INFO     | __main__:generate_audio:432 - Request: text="A ty wciąż tu stoisz i bredzisz o ogniu." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:10.420 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:10.420 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:10.420 | INFO     | __main__:generate_tts:288 - Generating: "A ty wciąż tu stoisz i bredzisz o ogniu...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:10.420 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:12.072 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203952063\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:12.073 | INFO     | __main__:generate_tts:348 - Generated: 2.76s @ 24kHz in 1.65s (1.67x realtime)
+2026-04-14 23:59:12.325 | INFO     | __main__:generate_audio:432 - Request: text="Gdzie jest ta twoja farma, która się pali?" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:12.325 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:12.326 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:12.326 | INFO     | __main__:generate_tts:288 - Generating: "Gdzie jest ta twoja farma, która się pali?..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:12.326 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:13.938 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203953928\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:13.938 | INFO     | __main__:generate_tts:348 - Generated: 2.96s @ 24kHz in 1.61s (1.84x realtime)
+2026-04-14 23:59:14.187 | INFO     | __main__:generate_audio:432 - Request: text="Mów, zanim zamarzniemy obaj na tym moście." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:14.187 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:14.188 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:14.188 | INFO     | __main__:generate_tts:288 - Generating: "Mów, zanim zamarzniemy obaj na tym moście...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:14.188 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:15.762 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203955752\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:15.763 | INFO     | __main__:generate_tts:348 - Generated: 3.00s @ 24kHz in 1.58s (1.90x realtime)
+2026-04-14 23:59:16.046 | INFO     | __main__:generate_audio:432 - Request: text="Tam, gdzie płonie jeszcze żar. za stajnią. gdzie krew w śnie" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:16.047 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:16.047 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:16.047 | INFO     | __main__:generate_tts:288 - Generating: "Tam, gdzie płonie jeszcze żar. za stajnią. gdzie krew w śniegu nie zdążyła zamar..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:16.047 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:18.172 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203958168\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:18.173 | INFO     | __main__:generate_tts:348 - Generated: 7.56s @ 24kHz in 2.13s (3.56x realtime)
+2026-04-14 23:59:18.448 | INFO     | __main__:generate_audio:432 - Request: text="Farma. moja farma. to nie ja ją paliłem." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:18.448 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:18.448 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:18.448 | INFO     | __main__:generate_tts:288 - Generating: "Farma. moja farma. to nie ja ją paliłem...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:18.449 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:20.116 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203960106\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:20.117 | INFO     | __main__:generate_tts:348 - Generated: 3.52s @ 24kHz in 1.67s (2.11x realtime)
+2026-04-14 23:59:20.372 | INFO     | __main__:generate_audio:432 - Request: text="To oni przyszli pierwsi." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:20.372 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:20.372 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:20.372 | INFO     | __main__:generate_tts:288 - Generating: "To oni przyszli pierwsi...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:20.372 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:22.039 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203962029\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:22.040 | INFO     | __main__:generate_tts:348 - Generated: 2.15s @ 24kHz in 1.67s (1.29x realtime)
+2026-04-14 23:59:22.298 | INFO     | __main__:generate_audio:432 - Request: text="Oni?" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:22.298 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:22.299 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:22.299 | INFO     | __main__:generate_tts:288 - Generating: "Oni?..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:22.299 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:23.782 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203963779\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:23.782 | INFO     | __main__:generate_tts:348 - Generated: 1.15s @ 24kHz in 1.48s (0.78x realtime)
+2026-04-14 23:59:24.035 | INFO     | __main__:generate_audio:432 - Request: text="Jacy oni?" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:24.035 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:24.035 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:24.035 | INFO     | __main__:generate_tts:288 - Generating: "Jacy oni?..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:24.035 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:25.538 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203965529\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:25.539 | INFO     | __main__:generate_tts:348 - Generated: 1.44s @ 24kHz in 1.50s (0.96x realtime)
+2026-04-14 23:59:25.816 | INFO     | __main__:generate_audio:432 - Request: text="Mów wyraźniej, bo z tego co widzę, to ty jesteś jedynym szal" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:25.816 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:25.816 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:25.816 | INFO     | __main__:generate_tts:288 - Generating: "Mów wyraźniej, bo z tego co widzę, to ty jesteś jedynym szaleńcem z buzdyganem w..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:25.816 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:27.624 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203967620\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:27.624 | INFO     | __main__:generate_tts:348 - Generated: 6.76s @ 24kHz in 1.81s (3.74x realtime)
+2026-04-14 23:59:27.908 | INFO     | __main__:generate_audio:432 - Request: text="Ty. stoisz tam. w blasku latarni. jakbyś był świętym." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:27.909 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:27.909 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:27.909 | INFO     | __main__:generate_tts:288 - Generating: "Ty. stoisz tam. w blasku latarni. jakbyś był świętym...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:27.909 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:29.555 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203969544\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:29.555 | INFO     | __main__:generate_tts:348 - Generated: 4.72s @ 24kHz in 1.65s (2.87x realtime)
+2026-04-14 23:59:29.834 | INFO     | __main__:generate_audio:432 - Request: text="A ja?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:29.834 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:29.834 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:29.834 | INFO     | __main__:generate_tts:288 - Generating: "A ja?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:29.834 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:31.191 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203971182\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:31.192 | INFO     | __main__:generate_tts:348 - Generated: 1.24s @ 24kHz in 1.36s (0.91x realtime)
+2026-04-14 23:59:31.449 | INFO     | __main__:generate_audio:432 - Request: text="Jestem cieniem, co przyszedł z nocy." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:31.449 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:31.450 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:31.450 | INFO     | __main__:generate_tts:288 - Generating: "Jestem cieniem, co przyszedł z nocy...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:31.450 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:32.764 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203972755\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:32.765 | INFO     | __main__:generate_tts:348 - Generated: 2.96s @ 24kHz in 1.32s (2.25x realtime)
+2026-04-14 23:59:33.047 | INFO     | __main__:generate_audio:432 - Request: text="Oni. Dunmer. z farmy. nie prosili o śmierć." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:33.047 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:33.047 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:33.047 | INFO     | __main__:generate_tts:288 - Generating: "Oni. Dunmer. z farmy. nie prosili o śmierć...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:33.047 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:34.310 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203974300\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:34.310 | INFO     | __main__:generate_tts:348 - Generated: 3.80s @ 24kHz in 1.26s (3.01x realtime)
+2026-04-14 23:59:34.597 | INFO     | __main__:generate_audio:432 - Request: text="Kurwa strazniku ten szaleniec Erburg dalej tu szaleje, musis" language=pl speaker=player job_id=-1
+2026-04-14 23:59:34.597 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-14 23:59:34.597 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-14 23:59:34.597 | INFO     | __main__:generate_tts:288 - Generating: "Kurwa strazniku ten szaleniec Erburg dalej tu szaleje, musisz go aresztowac zani..." lang=Polish speaker=player.wav
+2026-04-14 23:59:34.597 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:36.317 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203976314\player.wav @ 44100Hz
+2026-04-14 23:59:36.318 | INFO     | __main__:generate_tts:348 - Generated: 9.08s @ 24kHz in 1.72s (5.28x realtime)
+2026-04-14 23:59:36.610 | INFO     | __main__:generate_audio:432 - Request: text="Na rozkaz Yarla Ulfrica jesteś aresztowany za zabójstwo zwie" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:36.610 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:36.610 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:36.610 | INFO     | __main__:generate_tts:288 - Generating: "Na rozkaz Yarla Ulfrica jesteś aresztowany za zabójstwo zwierząt i napaść na str..." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:36.610 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:38.105 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203978094\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:38.106 | INFO     | __main__:generate_tts:348 - Generated: 6.14s @ 24kHz in 1.50s (4.11x realtime)
+2026-04-14 23:59:38.393 | INFO     | __main__:generate_audio:432 - Request: text="Rzuć broń i połóż się na ziemi, zanim będę musiał cię zmusić" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:38.393 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:38.393 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:38.393 | INFO     | __main__:generate_tts:288 - Generating: "Rzuć broń i połóż się na ziemi, zanim będę musiał cię zmusić...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:38.393 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:39.738 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203979727\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:39.738 | INFO     | __main__:generate_tts:348 - Generated: 4.20s @ 24kHz in 1.35s (3.12x realtime)
+2026-04-14 23:59:39.988 | INFO     | __main__:generate_audio:432 - Request: text="Aresztuj mnie?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:39.989 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:39.989 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:39.989 | INFO     | __main__:generate_tts:288 - Generating: "Aresztuj mnie?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:39.989 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:41.479 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203981476\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:41.480 | INFO     | __main__:generate_tts:348 - Generated: 1.80s @ 24kHz in 1.49s (1.21x realtime)
+2026-04-14 23:59:41.768 | INFO     | __main__:generate_audio:432 - Request: text="Na tym moście. gdzie śnieg pochłania każdy ślad?" language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:41.768 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:41.769 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:41.769 | INFO     | __main__:generate_tts:288 - Generating: "Na tym moście. gdzie śnieg pochłania każdy ślad?..." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:41.769 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:43.021 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203983019\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:43.022 | INFO     | __main__:generate_tts:348 - Generated: 4.39s @ 24kHz in 1.25s (3.50x realtime)
+2026-04-14 23:59:43.302 | INFO     | __main__:generate_audio:432 - Request: text="Zabij mnie lepiej od razu, strażniku." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:43.302 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:43.302 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:43.302 | INFO     | __main__:generate_tts:288 - Generating: "Zabij mnie lepiej od razu, strażniku...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:43.303 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:44.520 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203984510\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:44.520 | INFO     | __main__:generate_tts:348 - Generated: 3.44s @ 24kHz in 1.22s (2.82x realtime)
+2026-04-14 23:59:44.771 | INFO     | __main__:generate_audio:432 - Request: text="Będzie szybciej." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-14 23:59:44.771 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-14 23:59:44.771 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-14 23:59:44.771 | INFO     | __main__:generate_tts:288 - Generating: "Będzie szybciej...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-14 23:59:44.771 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:45.802 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203985794\aaagenericnordfr.wav @ 44100Hz
+2026-04-14 23:59:45.802 | INFO     | __main__:generate_tts:348 - Generated: 1.88s @ 24kHz in 1.03s (1.82x realtime)
+2026-04-14 23:59:46.055 | INFO     | __main__:generate_audio:432 - Request: text="Nie chcę cię zabijać, Nordzie." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:46.055 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:46.055 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:46.055 | INFO     | __main__:generate_tts:288 - Generating: "Nie chcę cię zabijać, Nordzie...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:46.055 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:47.134 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203987124\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:47.134 | INFO     | __main__:generate_tts:348 - Generated: 2.20s @ 24kHz in 1.08s (2.04x realtime)
+2026-04-14 23:59:47.415 | INFO     | __main__:generate_audio:432 - Request: text="Chcę cię zaprowadzić przed oblicze Yarla, byś odpowiedział z" language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:47.415 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:47.415 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:47.415 | INFO     | __main__:generate_tts:288 - Generating: "Chcę cię zaprowadzić przed oblicze Yarla, byś odpowiedział za swoje czyny...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:47.416 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:48.530 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203988519\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:48.530 | INFO     | __main__:generate_tts:348 - Generated: 5.28s @ 24kHz in 1.11s (4.74x realtime)
+2026-04-14 23:59:48.780 | INFO     | __main__:generate_audio:432 - Request: text="Rzuć tę broń." language=pl speaker=malenordcommander job_id=-1
+2026-04-14 23:59:48.781 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-14 23:59:48.781 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-14 23:59:48.781 | INFO     | __main__:generate_tts:288 - Generating: "Rzuć tę broń...." lang=Polish speaker=malenordcommander.wav
+2026-04-14 23:59:48.781 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-14 23:59:49.830 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776203989820\malenordcommander.wav @ 44100Hz
+2026-04-14 23:59:49.830 | INFO     | __main__:generate_tts:348 - Generated: 1.60s @ 24kHz in 1.05s (1.52x realtime)
+2026-04-15 00:00:53.138 | INFO     | __main__:generate_audio:432 - Request: text="No kurwa aresztuj tego szalenca, zanim kogos znowu zabije!" language=pl speaker=player job_id=-1
+2026-04-15 00:00:53.138 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4784740691420262637, speaker_noised=None
+2026-04-15 00:00:53.138 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 7f3c96882fa20bd2a42763b12529104a
+2026-04-15 00:00:53.139 | INFO     | __main__:generate_tts:288 - Generating: "No kurwa aresztuj tego szalenca, zanim kogos znowu zabije!..." lang=Polish speaker=player.wav
+2026-04-15 00:00:53.139 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:00:54.867 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204054857\player.wav @ 44100Hz
+2026-04-15 00:00:54.867 | INFO     | __main__:generate_tts:348 - Generated: 4.40s @ 24kHz in 1.73s (2.55x realtime)
+2026-04-15 00:01:03.680 | INFO     | __main__:generate_audio:432 - Request: text="To koniec twojego szaleństwa." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:01:03.680 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:01:03.681 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:01:03.681 | INFO     | __main__:generate_tts:288 - Generating: "To koniec twojego szaleństwa...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:01:03.681 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:05.050 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204065040\malenordcommander.wav @ 44100Hz
+2026-04-15 00:01:05.051 | INFO     | __main__:generate_tts:348 - Generated: 2.20s @ 24kHz in 1.37s (1.61x realtime)
+2026-04-15 00:01:05.296 | INFO     | __main__:generate_audio:432 - Request: text="Ręce za siebie." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:01:05.296 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:01:05.296 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:01:05.297 | INFO     | __main__:generate_tts:288 - Generating: "Ręce za siebie...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:01:05.297 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:06.569 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204066560\malenordcommander.wav @ 44100Hz
+2026-04-15 00:01:06.570 | INFO     | __main__:generate_tts:348 - Generated: 1.68s @ 24kHz in 1.27s (1.32x realtime)
+2026-04-15 00:01:15.716 | INFO     | __main__:generate_audio:432 - Request: text="Niech będzie tak, jak chcesz." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-15 00:01:15.717 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-15 00:01:15.717 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-15 00:01:15.717 | INFO     | __main__:generate_tts:288 - Generating: "Niech będzie tak, jak chcesz...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-15 00:01:15.717 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:16.781 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204076778\aaagenericnordfr.wav @ 44100Hz
+2026-04-15 00:01:16.782 | INFO     | __main__:generate_tts:348 - Generated: 2.67s @ 24kHz in 1.07s (2.51x realtime)
+2026-04-15 00:01:17.064 | INFO     | __main__:generate_audio:432 - Request: text="Spokój. przyjdzie i tak." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-15 00:01:17.064 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-15 00:01:17.064 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-15 00:01:17.064 | INFO     | __main__:generate_tts:288 - Generating: "Spokój. przyjdzie i tak...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-15 00:01:17.064 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:18.212 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204078209\aaagenericnordfr.wav @ 44100Hz
+2026-04-15 00:01:18.212 | INFO     | __main__:generate_tts:348 - Generated: 2.28s @ 24kHz in 1.15s (1.99x realtime)
+2026-04-15 00:01:20.888 | INFO     | __main__:generate_audio:432 - Request: text="Dobrze." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:01:20.889 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:01:20.889 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:01:20.889 | INFO     | __main__:generate_tts:288 - Generating: "Dobrze...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:01:20.889 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:21.876 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204081866\malenordcommander.wav @ 44100Hz
+2026-04-15 00:01:21.877 | INFO     | __main__:generate_tts:348 - Generated: 1.28s @ 24kHz in 0.99s (1.30x realtime)
+2026-04-15 00:01:22.125 | INFO     | __main__:generate_audio:432 - Request: text="Spokój przyjdzie w lochach pod Pałacem Królów." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:01:22.126 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:01:22.126 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:01:22.126 | INFO     | __main__:generate_tts:288 - Generating: "Spokój przyjdzie w lochach pod Pałacem Królów...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:01:22.126 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:23.352 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204083343\malenordcommander.wav @ 44100Hz
+2026-04-15 00:01:23.353 | INFO     | __main__:generate_tts:348 - Generated: 3.36s @ 24kHz in 1.23s (2.74x realtime)
+2026-04-15 00:01:23.612 | INFO     | __main__:generate_audio:432 - Request: text="Chodź." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:01:23.612 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:01:23.612 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:01:23.612 | INFO     | __main__:generate_tts:288 - Generating: "Chodź...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:01:23.612 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:24.602 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204084593\malenordcommander.wav @ 44100Hz
+2026-04-15 00:01:24.603 | INFO     | __main__:generate_tts:348 - Generated: 1.32s @ 24kHz in 0.99s (1.33x realtime)
+2026-04-15 00:01:31.483 | INFO     | __main__:generate_audio:432 - Request: text="Lochy. są zimne." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-15 00:01:31.483 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-15 00:01:31.483 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-15 00:01:31.483 | INFO     | __main__:generate_tts:288 - Generating: "Lochy. są zimne...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-15 00:01:31.483 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:32.699 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204092697\aaagenericnordfr.wav @ 44100Hz
+2026-04-15 00:01:32.699 | INFO     | __main__:generate_tts:348 - Generated: 1.84s @ 24kHz in 1.22s (1.51x realtime)
+2026-04-15 00:01:32.956 | INFO     | __main__:generate_audio:432 - Request: text="Ale nie tak jak śnieg tej nocy." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-15 00:01:32.956 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-15 00:01:32.956 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-15 00:01:32.956 | INFO     | __main__:generate_tts:288 - Generating: "Ale nie tak jak śnieg tej nocy...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-15 00:01:32.956 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:34.287 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204094279\aaagenericnordfr.wav @ 44100Hz
+2026-04-15 00:01:34.288 | INFO     | __main__:generate_tts:348 - Generated: 2.47s @ 24kHz in 1.33s (1.85x realtime)
+2026-04-15 00:01:42.227 | INFO     | __main__:generate_audio:432 - Request: text="Witaj, podróżny." language=pl speaker=maleguard job_id=-1
+2026-04-15 00:01:42.227 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=5572115633511384996, speaker_noised=None
+2026-04-15 00:01:42.227 | INFO     | __main__:_get_cached_prompt:220 - Creating voice clone prompt from: maleguard.wav
+2026-04-15 00:01:42.227 | WARNING  | __main__:_get_cached_prompt:224 - load_asr_model=False but generating prompt for new voice maleguard.wav! This may fail if ASR is needed.
+2026-04-15 00:01:43.519 | DEBUG    | audio_cache:save_prompt_cache:84 - Saved to disk cache: F:\AI\SkyrimNetOmniVoice\OmniTTS\cache\7cd53c5f71fc1a17ebd85fa3bbc0f9f1.pt
+2026-04-15 00:01:43.519 | INFO     | __main__:generate_tts:288 - Generating: "Witaj, podróżny...." lang=Polish speaker=maleguard.wav
+2026-04-15 00:01:43.519 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:44.589 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204104579\maleguard.wav @ 44100Hz
+2026-04-15 00:01:44.589 | INFO     | __main__:generate_tts:348 - Generated: 1.39s @ 24kHz in 2.36s (0.59x realtime)
+2026-04-15 00:01:44.590 | DEBUG    | __main__:generate_tts:376 - VRAM reserved (5.20 GB) > limit (5.0 GB). Clearing cache.
+2026-04-15 00:01:45.019 | INFO     | __main__:generate_audio:432 - Request: text="ciągnąc go w stronę miasta Nie martw się o zimno. W lochach " language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:01:45.020 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:01:45.020 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:01:45.020 | INFO     | __main__:generate_tts:288 - Generating: "ciągnąc go w stronę miasta Nie martw się o zimno. W lochach jest cieplej niż na ..." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:01:45.020 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:46.809 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204106798\malenordcommander.wav @ 44100Hz
+2026-04-15 00:01:46.810 | INFO     | __main__:generate_tts:348 - Generated: 8.96s @ 24kHz in 1.79s (5.01x realtime)
+2026-04-15 00:01:58.108 | INFO     | __main__:generate_audio:432 - Request: text="Przemyślenia. to tylko echo tego, co już zrobiłem." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-15 00:01:58.109 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-15 00:01:58.109 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-15 00:01:58.109 | INFO     | __main__:generate_tts:288 - Generating: "Przemyślenia. to tylko echo tego, co już zrobiłem...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-15 00:01:58.109 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:01:59.449 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204119439\aaagenericnordfr.wav @ 44100Hz
+2026-04-15 00:01:59.450 | INFO     | __main__:generate_tts:348 - Generated: 4.34s @ 24kHz in 1.34s (3.24x realtime)
+2026-04-15 00:01:59.703 | INFO     | __main__:generate_audio:432 - Request: text="A echo nie ogrzewa." language=pl speaker=aaagenericnordfr job_id=-1
+2026-04-15 00:01:59.703 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=4215470123735834402, speaker_noised=None
+2026-04-15 00:01:59.703 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 35d0b79bc119869077a8561b3687d225
+2026-04-15 00:01:59.703 | INFO     | __main__:generate_tts:288 - Generating: "A echo nie ogrzewa...." lang=Polish speaker=aaagenericnordfr.wav
+2026-04-15 00:01:59.703 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:02:01.139 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204121129\aaagenericnordfr.wav @ 44100Hz
+2026-04-15 00:02:01.139 | INFO     | __main__:generate_tts:348 - Generated: 1.49s @ 24kHz in 1.44s (1.04x realtime)
+2026-04-15 00:02:11.884 | INFO     | __main__:generate_audio:432 - Request: text="Ech, przestań jęczeć." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:02:11.885 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:02:11.885 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:02:11.885 | INFO     | __main__:generate_tts:288 - Generating: "Ech, przestań jęczeć...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:02:11.885 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:02:12.299 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204132291\malenordcommander.wav @ 44100Hz
+2026-04-15 00:02:12.299 | INFO     | __main__:generate_tts:348 - Generated: 1.88s @ 24kHz in 0.41s (4.54x realtime)
+2026-04-15 00:02:12.551 | INFO     | __main__:generate_audio:432 - Request: text="Sam sobie to zgotowałeś." language=pl speaker=malenordcommander job_id=-1
+2026-04-15 00:02:12.552 | DEBUG    | __main__:generate_audio:443 - Full API params: cfg_scale=0.3499999940395355, speaking_rate=None, top_p=1.0, min_p=0.05000000074505806, randomize_seed=6243269175283131138, speaker_noised=None
+2026-04-15 00:02:12.552 | DEBUG    | audio_cache:load_prompt_cache:50 - Cache hit (memory): 4d91b8f749a28acaddde1898beb9ab14
+2026-04-15 00:02:12.552 | INFO     | __main__:generate_tts:288 - Generating: "Sam sobie to zgotowałeś...." lang=Polish speaker=malenordcommander.wav
+2026-04-15 00:02:12.552 | DEBUG    | __main__:generate_tts:298 - Generation params: guidance_scale=2.5, num_step=16, speed=1.1, denoise=True, chunk_threshold=15.0, chunk_duration=15.0
+2026-04-15 00:02:13.014 | INFO     | audio_cache:save_wav:138 - Saved WAV: F:\AI\SkyrimNetOmniVoice\OmniTTS\output_temp\1776204133004\malenordcommander.wav @ 44100Hz
+2026-04-15 00:02:13.014 | INFO     | __main__:generate_tts:348 - Generated: 1.96s @ 24kHz in 0.46s (4.24x realtime)

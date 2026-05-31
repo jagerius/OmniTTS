@@ -18,6 +18,7 @@ from pathlib import Path
 from time import perf_counter_ns
 
 import gradio as gr
+import numpy as np
 import torch
 from loguru import logger
 
@@ -48,11 +49,19 @@ START_DIRECTORY = Path.cwd()
 _initial_config = load_config()
 _use_cpu_override = _initial_config.get("use_cpu", "false").lower() == "true"
 
+# Check for --device in launch args early
+_custom_device = "cuda:0"
+if "--device" in sys.argv:
+    try:
+        _custom_device = sys.argv[sys.argv.index("--device") + 1]
+    except IndexError:
+        pass
+
 # Force CUDA if available
 if torch.cuda.is_available() and not _use_cpu_override:
-    DEVICE = "cuda:0"
+    DEVICE = _custom_device
     DTYPE = torch.bfloat16
-    logger.info(f"CUDA available: {torch.cuda.get_device_name(0)} (VRAM: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB)")
+    logger.info(f"CUDA available: {torch.cuda.get_device_name(DEVICE)} (Using device: {DEVICE}) (VRAM: {torch.cuda.get_device_properties(DEVICE).total_memory / 1024**3:.1f} GB)")
 else:
     DEVICE = "cpu"
     DTYPE = torch.float32
@@ -257,8 +266,10 @@ def generate_tts(text: str, speaker_audio: str | None, language: str = "en",
 
         # Save first audio result
         audio_tensor = audios[0]
-        
-        if audio_tensor.numel() == 0:
+        _is_numpy = isinstance(audio_tensor, np.ndarray)
+        _is_empty = audio_tensor.size == 0 if _is_numpy else audio_tensor.numel() == 0
+
+        if _is_empty:
             logger.warning(f"Model generated empty audio for text: '{text}'. Using silence fallback.")
             wav_path = Path(SILENCE_AUDIO_PATH).absolute()
             audio_len_s = 0.0
@@ -389,7 +400,13 @@ def generate_audio(
 # ---------------------------------------------------------------------------
 with gr.Blocks() as demo:
 
-    gr.set_static_paths(["assets", "cache", "output_temp"])
+    gr.set_static_paths([
+        str(START_DIRECTORY / "assets"),
+        str(START_DIRECTORY / "cache"),
+        str(START_DIRECTORY / "output_temp"),
+        str(START_DIRECTORY / "speakers"),
+        str(START_DIRECTORY.parent),
+    ])
 
     # --- Visible UI ---
     with gr.Row():
@@ -506,6 +523,8 @@ def parse_arguments():
                         help="Clear output directories and exit")
     parser.add_argument("--clearcache", action="store_true",
                         help="Clear cache files and exit")
+    parser.add_argument("--device", type=str, default="cuda:0",
+                        help="CUDA device to use (e.g., cuda:0, cuda:1)")
     return parser.parse_args()
 
 

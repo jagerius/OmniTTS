@@ -40,8 +40,24 @@ if (Test-Path $omniVoicePath) {
     Write-Host "[WARN] OmniVoice directory not found at: $omniVoicePath" -ForegroundColor Yellow
 }
 
-# Parse arguments
-$serverArgs = @("omnitts_server.py", "--server", "0.0.0.0", "--port", "7860")
+# Set default port
+$port = "7860"
+
+# Check if --port was passed in the arguments to update the display variable
+for ($i = 0; $i -lt $args.Count; $i++) {
+    if ($args[$i] -eq "--port" -and ($i + 1) -lt $args.Count) {
+        $port = $args[$i + 1]
+        break
+    }
+}
+
+# Base arguments
+$serverArgs = @("omnitts_server.py", "--server", "0.0.0.0")
+
+# If the user didn't specify a port, add the default one
+if ($args -notcontains "--port") {
+    $serverArgs += "--port", $port
+}
 
 # Add any extra arguments passed to this script
 if ($args.Count -gt 0) {
@@ -50,8 +66,8 @@ if ($args.Count -gt 0) {
 
 Write-Host ""
 Write-Host "[INFO] Starting OmniTTS server..." -ForegroundColor Green
-Write-Host "[INFO] Endpoint: http://localhost:7860" -ForegroundColor Green
-Write-Host "[INFO] API: http://localhost:7860/api/generate_audio" -ForegroundColor Green
+Write-Host "[INFO] Endpoint: http://localhost:$port" -ForegroundColor Green
+Write-Host "[INFO] API: http://localhost:$port/api/generate_audio" -ForegroundColor Green
 Write-Host "[INFO] Press Ctrl+C to stop" -ForegroundColor Yellow
 Write-Host ""
 
