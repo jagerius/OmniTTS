@@ -25,4 +25,4 @@ huggingface_hub
 hf-xet
 
 # OmniVoice
-omnivoice
+omnivoice>=0.1.5

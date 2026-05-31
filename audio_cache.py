@@ -79,7 +79,7 @@ def save_prompt_cache(cache_key: str, prompt, cache_dir: Path,
 
 def save_wav(audio_tensor, sample_rate: int,
              audio_prompt_path: str | None = None,
-             target_sample_rate: int = 44100) -> Path:
+             target_sample_rate: int = 24000) -> Path:
     """
     Save generated audio to output_temp/ directory.
 
